@@ -1,7 +1,6 @@
-- view: date_exceptin
+- view: date_exception
 
-  
-  sql_table_name: LOOKER.DATE_EXCEPTIN
+  sql_table_name: LOOKER.DATE_EXCEPTION
   fields:
 
   - dimension: exception_amount
@@ -24,4 +23,3 @@
   - measure: count
     type: count
     drill_fields: []
-

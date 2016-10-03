@@ -164,10 +164,10 @@
     title: 'Top 10 Receipt Date Exceptions by Supplier'
     type: looker_bar
     model: Procurement
-    explore: date_exceptin
-    dimensions: [date_exceptin.supplier]
-    measures: [date_exceptin.exception_amount_m]
-    sorts: [date_exceptin.exception_amount_m desc]
+    explore: date_exception
+    dimensions: [date_exception.supplier]
+    measures: [date_exception.exception_amount_m]
+    sorts: [date_exception.exception_amount_m desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles

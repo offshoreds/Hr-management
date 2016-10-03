@@ -10,7 +10,7 @@
 
 - explore: purchase_by_bu
 
-- explore: date_exceptin
+- explore: date_exception
 
 - explore: receipt_date
 
