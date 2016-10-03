@@ -18,7 +18,7 @@
     
   - measure: invoice_amount_m
     type: sum
-    label: 'Invoice Price Variance AMount'
+    label: 'Invoice Price Variance Amount'
     value_format: '$0.00'
     sql: ${invoice_amount}
 
