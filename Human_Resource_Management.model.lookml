@@ -1,8 +1,12 @@
 - connection: look
- 
+- label: HR Management
 
 - include: "*.view.lookml"       # include all the views
-- include: "*.dashboard.lookml"  # include all the dashboards
+- include: "employee_expenses.dashboard.lookml"  
+
+- include: "Recruitment.dashboard.lookml" 
+
+- include: "workforce_effectiveness.dashboard.lookml" 
 
 - explore: headcount
 
@@ -57,20 +61,5 @@
 
 - explore: expenses_by_day
 
-- explore: agreement_leakage
-
-- explore: purchase_by_supplier
-
-- explore: purchase_by_bu
-
-- explore: date_exceptin
-
-- explore: receipt_date
-
-- explore: return_trend
-
-- explore: returns_supplier
-
-- explore: variance_supplier
 
 

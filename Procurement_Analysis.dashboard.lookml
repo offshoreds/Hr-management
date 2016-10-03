@@ -1,4 +1,4 @@
-- dashboard: procurement
+- dashboard: procurement_analysis
   title: Procurement
   layout: grid
   rows:
@@ -22,6 +22,7 @@
   - name: Top_10_Agreement_Leakage_by_Requisitioning_BU
     title: 'Top 10 Agreement Leakage by Requisitioning BU'
     type: looker_bar
+    model: Procurement
     explore: agreement_leakage
     dimensions: [agreement_leakage.business_name]
     measures: [agreement_leakage.amount_m]
@@ -60,6 +61,7 @@
   - name: Top_10_Non_negotiated_Purchases_By_Supplier
     title: 'Top 10 Non-negotiated Purchases By Supplier'
     type: looker_line
+    model: Procurement
     explore: purchase_by_supplier
     dimensions: [purchase_by_supplier.suplier]
     measures: [purchase_by_supplier.sup_amount_m]
@@ -95,6 +97,7 @@
   - name: Top_10_Non_negotiated_Purchases_By_Requisitioning_BU
     title: 'Top 10 Non negotiated Purchases By Requisitioning BU'
     type: looker_area
+    model: Procurement
     explore: purchase_by_bu
     dimensions: [purchase_by_bu.business_unit]
     measures: [purchase_by_bu.amount_m]
@@ -160,6 +163,7 @@
   - name: Top_10_Receipt_Date_Exceptions_By_Supplier
     title: 'Top 10 Receipt Date Exceptions by Supplier'
     type: looker_bar
+    model: Procurement
     explore: date_exceptin
     dimensions: [date_exceptin.supplier]
     measures: [date_exceptin.exception_amount_m]
@@ -199,6 +203,7 @@
     title: 'Return Trend'
     type: looker_column
     explore: return_trend
+    model: Procurement
     dimensions: [return_trend.year, return_trend.quarter]
     measures: [return_trend.return_amount_m, return_trend.return_percent_m]
     sorts: [return_trend.year desc, return_trend.quarter]
@@ -234,6 +239,7 @@
   - name: Receipt_Date_Exceptions_Trend
     title: 'Receipt Date Exceptions Trend'
     type: looker_column
+    model: Procurement
     explore: receipt_date
     dimensions: [receipt_date.year, receipt_date.quarter]
     measures: [receipt_date.amount_m, receipt_date.percent_reception_m]
@@ -271,6 +277,7 @@
   - name: Top_10_Returns_By_Supplier
     title: 'Top 10 Returns By Supplier'
     type: looker_pie
+    model: Procurement
     explore: returns_supplier
     dimensions: [returns_supplier.supplier]
     measures: [returns_supplier.returned_amount_m]
@@ -308,6 +315,7 @@
   - name: Top_10_Invoice_Price_Variance_by_Supplier
     title: 'Top 10 Invoice Price Variance by Supplier'
     type: looker_column
+    model: Procurement
     explore: variance_supplier
     dimensions: [variance_supplier.supplier]
     measures: [variance_supplier.invoice_amount_m, variance_supplier.invoice_percent_m]

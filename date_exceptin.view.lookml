@@ -1,4 +1,6 @@
 - view: date_exceptin
+
+  
   sql_table_name: LOOKER.DATE_EXCEPTIN
   fields:
 

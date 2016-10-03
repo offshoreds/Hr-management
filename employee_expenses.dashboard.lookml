@@ -31,6 +31,7 @@
   - name: three_salary_trend
     title: 'Three Year Salary Trend'
     type: looker_column
+    model: Human_Resource_Management
     explore: threeyears_saltrend
     dimensions: [threeyears_saltrend.year]
     measures: [threeyears_saltrend.average_annual_base_salary_m, threeyears_saltrend.employee_head_count_m,
@@ -78,6 +79,7 @@
   - name: Salary_Compression
     title: 'Salary Compression'
     type: table
+    model: Human_Resource_Management
     explore: salary_compression
     dimensions: [salary_compression.pay_grade_name]
     measures: [salary_compression.avg_annual_basesal_m, salary_compression.employee_headcount_m,
@@ -119,6 +121,7 @@
   - name: Performance_Base
     title: 'Performance Base'
     type: table
+    model: Human_Resource_Management
     explore: performance_base
     dimensions: [performance_base.performance_brand]
     measures: [performance_base.avg_annual_base_salary_m, performance_base.full_base_salary_m,
@@ -161,6 +164,7 @@
   - name: Total_Expenses_trend
     title: 'Total Expenses Trend'
     type: looker_area
+    model: Human_Resource_Management
     explore: total_expenses_trend
     dimensions: [total_expenses_trend.year, total_expenses_trend.month]
     measures: [total_expenses_trend.cumulative_expense_amount_m]
@@ -202,6 +206,7 @@
   - name: Top_Cost_Centers
     title: 'Top Cost Centers By Expenses'
     type: table
+    model: Human_Resource_Management
     explore: top_cost_centers
     dimensions: [top_cost_centers.cost_center_number]
     measures: [top_cost_centers.total_expenses_m, top_cost_centers.total_expenses_year_ago_m]
@@ -242,6 +247,7 @@
   - name: Expenses_By_category
     title: 'Expenses By Category'
     type: looker_bar
+    model: Human_Resource_Management
     explore: expenses_category
     dimensions: [expenses_category.category]
     measures: [expenses_category.expense_amount_m]
@@ -311,6 +317,7 @@
   - name: Top_Spenders
     title: 'Top Spenders'
     type: looker_pie
+    model: Human_Resource_Management
     explore: top_spenders
     dimensions: [top_spenders.employee_name]
     measures: [top_spenders.total_spent_m]
@@ -355,6 +362,7 @@
   - name: Expenses_By_Time_period
     title: 'Expenses By Time Period'
     type: looker_area
+    model: Human_Resource_Management
     explore: expenses_by_time_period
     dimensions: [expenses_by_time_period.year, expenses_by_time_period.quarter]
     measures: [expenses_by_time_period.amount_spent_m]
@@ -396,6 +404,7 @@
     title: 'Recent Employee Expenses'
     type: looker_line
     explore: recent_emp
+    model: Human_Resource_Management
     dimensions: [recent_emp.emp, recent_emp.report_status, recent_emp.emp_report_number]
     measures: [recent_emp.Total_amount_spent_m]
     sorts: [recent_emp.Total_amount_spent_m desc]
@@ -437,6 +446,7 @@
   - name: Expenses_Report_Submission_By_Day
     title: 'Expenses Report Submission By Day'
     type: looker_column
+    model: Human_Resource_Management
     explore: expenses_by_day
     dimensions: [expenses_by_day.spent_d, expenses_by_day.day]
     measures: [expenses_by_day.expenses_m, expenses_by_day.reports_submitted_m]

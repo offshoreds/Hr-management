@@ -21,6 +21,7 @@
   - name: New_hire_view
     title: 'Top 5 Hires By Department '
     type: looker_line
+    model: Human_Resource_Management
     explore: new_hire_view
     dimensions: [new_hire_view.department_name]
     measures: [new_hire_view.hires_m]
@@ -63,6 +64,7 @@
   - name: vacancy_fill_rate
     title: 'Vacancy Fill Rate'
     type: looker_column
+    model: Human_Resource_Management
     explore: vacancy_fill_rate
     dimensions: [vacancy_fill_rate.department_name]
     measures: [vacancy_fill_rate.job_requisition_period_m, vacancy_fill_rate.job_requisitions_opened_m,
@@ -139,6 +141,7 @@
     title: 'Vacancy Rate'
     type: looker_line
     explore: vacancy_rate
+    model: Human_Resource_Management
     dimensions: [vacancy_rate.department_name]
     measures: [vacancy_rate.employee_headcount_m, vacancy_rate.vacancy_rate_m]
     filters:
@@ -177,6 +180,7 @@
 
   - name: requisition_event
     title: 'Requisition Event'
+    model: Human_Resource_Management
     type: looker_single_record
     explore: requisition_events
     measures: [requisition_events.Job_openings, requisition_events.Vacancy_fill_rate,
@@ -221,6 +225,7 @@
     title: 'Recruitment Events'
     type: looker_single_record
     explore: recruitment_events
+    model: Human_Resource_Management
     measures: [recruitment_events.application_starts_m, recruitment_events.assessment_interviews_m,
       recruitment_events.hires_m, recruitment_events.offers_accepted_m, recruitment_events.offers_extended_m,
       recruitment_events.offers_rejected_m]
@@ -266,6 +271,7 @@
     stacking: ''
     show_value_labels: false
     label_density: 25
+    model: Human_Resource_Management
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -296,6 +302,7 @@
   - name: Open_requisition_Overview
     title: 'Open Requisition Overview'
     type: looker_pie
+    model: Human_Resource_Management
     explore: open_requisition
     dimensions: [open_requisition.country]
     measures: [open_requisition.requisitions_m]
@@ -339,6 +346,7 @@
     title:  'Top 5 Vacancies'
     type: looker_column
     explore: top5_vacancies
+    model: Human_Resource_Management
     dimensions: [top5_vacancies.country_states]
     measures: [top5_vacancies.openings_m]
     sorts: [top5_vacancies.openings_m desc]
@@ -372,6 +380,7 @@
   - name: Recruitment_Stage
     title: 'Recruitment Stage'
     type: looker_bar
+    model: Human_Resource_Management
     explore: recruitment_stage
     dimensions: [recruitment_stage.year, recruitment_stage.quarter]
     measures: [recruitment_stage.application_start_m, recruitment_stage.offer_extended_m,
@@ -412,6 +421,7 @@
   - name: New_Hire_source
     title: 'New Hires By Source'
     type: looker_bar
+    model: Human_Resource_Management
     explore: new_hire_source
     dimensions: [new_hire_source.source]
     measures: [new_hire_source.Employee_Hires_m]
@@ -450,6 +460,7 @@
   - name: New_HIre_retention
     title: 'New Hire Retention By Source'
     type: looker_line
+    model: Human_Resource_Management
     explore: new_hire_retention
     dimensions: [new_hire_retention.source_type]
     measures: [new_hire_retention.employee_separations_m, new_hire_retention.first_service_m,

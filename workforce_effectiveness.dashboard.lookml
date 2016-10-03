@@ -19,6 +19,7 @@
   - name: Employees_Headcount
     title: 'Contingent And Permanent Employees'
     type: looker_column
+    model: Human_Resource_Management
     explore: headcount
     dimensions: [headcount.Department_name]
     measures: [headcount.Employees, headcount.Contingent_emp]
@@ -62,6 +63,7 @@
     title: 'Employees HeadCount'
     type: single_value
     explore: headcount
+    model: Human_Resource_Management
     measures: [headcount.Contingent_emp]
     sorts: [headcount.Contingent_emp desc]
     limit: '500'
@@ -107,6 +109,7 @@
     title: '# Contingent Employees HeadCount'
     type: single_value
     explore: headcount
+    model: Human_Resource_Management
     measures: [headcount.Employees]
     sorts: [headcount.Employees desc]
     limit: '500'
@@ -151,7 +154,7 @@
   - name: Employees_Turnover
     title: 'Employees and Turnover'
     type: looker_column
-    model: hr_management
+    model: Human_Resource_Management
     explore: headcount
     dimensions: [headcount.Department_name]
     measures: [headcount.Employees, headcount.Emp_Turnover, headcount.Contingent_emp]
@@ -201,7 +204,7 @@
   - name: Supervisors
     title: '# Supervisors'
     type: single_value
-    model: hr_management
+    model: Human_Resource_Management
     explore: supervisorreport
     measures: [supervisorreport.Supervisor_count]
     sorts: [supervisorreport.Supervisor_count desc]
@@ -244,6 +247,7 @@
   - name: Avg_employees
     title: '# Avg Employees Per Supervisor'
     type: single_value
+    model: Human_Resource_Management
     explore: supervisorreport
     measures: [supervisorreport.Average_Emp]
     sorts: [supervisorreport.Average_Emp desc]
@@ -286,6 +290,7 @@
   - name: Employee_Vs_SUpervisor
     title: 'Supervisor Span of Control'
     type: looker_column
+    model: Human_Resource_Management
     explore: supervisorreport
     dimensions: [supervisorreport.Department]
     measures: [supervisorreport.Supervisor_count, supervisorreport.Emp_count]
@@ -332,6 +337,7 @@
   - name: Average_employees
     title: 'Average Employees'
     type: looker_line
+    model: Human_Resource_Management
     explore: supervisorreport
     dimensions: [supervisorreport.Department]
     measures: [supervisorreport.Supervisor_count, supervisorreport.Average_Emp]
@@ -377,6 +383,7 @@
   - name: Employees_trend
     title: 'Employees Trend'
     type: looker_bar
+    model: Human_Resource_Management
     explore: employees_trend
     dimensions: [employees_trend.year]
     measures: [employees_trend.employees_count, employees_trend.voluntery_employees,
@@ -418,6 +425,7 @@
   - name: Voluntary_Termination
     title: '# Voluntary Termination'
     type: single_value
+    model: Human_Resource_Management
     explore: employees_trend
     measures: [employees_trend.voluntery_employees]
     sorts: [employees_trend.voluntery_employees desc]
@@ -460,6 +468,7 @@
   - name: Involuntary_Termination
     title: '# Involuntary Termination'
     type: single_value
+    model: Human_Resource_Management
     explore: employees_trend
     measures: [employees_trend.involuntary_termination_count]
     sorts: [employees_trend.involuntary_termination_count desc]
@@ -502,6 +511,7 @@
   - name: employee_expenses
     title: 'Employee Expenses'
     type: looker_bar
+    model: Human_Resource_Management
     explore: payroll
     dimensions: [payroll.year]
     measures: [payroll.payroll, payroll.support, payroll.overtime]
