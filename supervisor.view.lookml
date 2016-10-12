@@ -44,13 +44,13 @@
     label: 'Supervisors'
     value_format: '0'
     type: sum
-    sql: ${Supervisor}/10000
+    sql: ${Supervisor}/100
   
   - measure: Average_Emp
     label: ' Average Employees'
     type: sum
     value_format: '0'
-    sql: ${Avg_emp}/10000
+    sql: ${Avg_emp}/1000
     
     
     

@@ -8,6 +8,7 @@
 
   - dimension: emp
     type: string
+    label: 'Employee Name'
     sql: ${TABLE}.EMP
 
   - dimension: emp_id

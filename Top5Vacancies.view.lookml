@@ -17,7 +17,7 @@
   - measure: openings_m
     label: 'Openings'
     type: sum
-    sql: ${openings}
+    sql: ${openings}*3
     
   
 

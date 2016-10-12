@@ -1,5 +1,5 @@
 - dashboard: procurement_analysis
-  title: Procurement
+  title: Procurement-Overview
   layout: grid
   rows:
     - elements: [Top_10_Agreement_Leakage_by_Requisitioning_BU,Top_10_Non_negotiated_Purchases_By_Supplier]
@@ -20,7 +20,7 @@
 
 
   - name: Top_10_Agreement_Leakage_by_Requisitioning_BU
-    title: 'Top 10 Agreement Leakage by Requisitioning BU'
+    title: 'Top 10 Agreement Leakage By Requisitioning BU'
     type: looker_bar
     model: Procurement
     explore: agreement_leakage
@@ -59,7 +59,7 @@
     
     
   - name: Top_10_Non_negotiated_Purchases_By_Supplier
-    title: 'Top 10 Non-negotiated Purchases By Supplier'
+    title: 'Top 10 Non-Negotiated Purchases By Supplier'
     type: looker_line
     model: Procurement
     explore: purchase_by_supplier
@@ -95,7 +95,7 @@
   
   
   - name: Top_10_Non_negotiated_Purchases_By_Requisitioning_BU
-    title: 'Top 10 Non negotiated Purchases By Requisitioning BU'
+    title: 'Top 10 Non Negotiated Purchases By Requisitioning BU'
     type: looker_area
     model: Procurement
     explore: purchase_by_bu
@@ -161,7 +161,7 @@
     series_types: {}
     
   - name: Top_10_Receipt_Date_Exceptions_By_Supplier
-    title: 'Top 10 Receipt Date Exceptions by Supplier'
+    title: 'Top 10 Receipt Date Exceptions By Supplier'
     type: looker_bar
     model: Procurement
     explore: date_exception
@@ -313,7 +313,7 @@
     series_types: {}
     
   - name: Top_10_Invoice_Price_Variance_by_Supplier
-    title: 'Top 10 Invoice Price Variance by Supplier'
+    title: 'Top 10 Invoice Price Variance By Supplier'
     type: looker_column
     model: Procurement
     explore: variance_supplier

@@ -14,9 +14,16 @@
   
   - measure: sup_amount_m
     label: 'Non Negotiated Purchase Amount'
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     type: sum
     sql: ${sup_amount}
+    
+  - measure: sup_amount_m_s
+    label: 'Amount Spend'
+    value_format: '$#,##0.00'
+    type: sum
+    sql: ${sup_amount}/1.5
+
 
 
   - measure: count

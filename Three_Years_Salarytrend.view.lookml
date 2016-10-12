@@ -18,12 +18,16 @@
     type: string
     sql: ${TABLE}.YEAR
     
+  - dimension: quarter
+    type: string
+    sql: ${TABLE}.QUARTER
+    
     # measures
   - measure: average_annual_base_salary_m
     type: avg   
-    value_format: '$0.00'
+    value_format: '$0.##,, " M"'
     label: 'Average Annual Base Salary'
-    sql: ${average_annual_base_salary}/100
+    sql: ${total_annual_base_salary}
 
   - measure: employee_head_count_m
     label: 'Employee Headcount'
@@ -31,10 +35,10 @@
     sql: ${employee_head_count}
 
   - measure: total_annual_base_salary_m
-    type: avg
-    value_format: '$0.00'
+    type: sum
+    value_format: '$0.##,, " M"'
     label: 'Total Annual Base Salary'
-    sql: ${total_annual_base_salary}/10000
+    sql: ${total_annual_base_salary}
     
   - measure: count
     type: count

@@ -20,12 +20,12 @@
   - measure: Job_openings
     type: sum
     value_format: '0'
-    sql: ${Openings}/10
+    sql: ${Openings}
 
   - measure: Job_requisition_opening
     type: sum
     value_format: '0'
-    sql: ${Requisition_opening}/10
+    sql: ${Requisition_opening}
     
   - measure: Vacancy_rate
     label: 'Vacancy Rate'

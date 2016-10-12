@@ -23,6 +23,20 @@
     type: string
     sql: ${TABLE}.SPENT_D
     
+  - dimension: month
+    type: string
+    sql: ${TABLE}.MONTH
+    
+  - dimension: Year
+    type: string
+    sql: ${TABLE}.YEAR
+    
+  - dimension: Quarter
+    type: string
+    sql: ${TABLE}.QUARTER
+    
+    
+    
   # MEASURES
   
   
@@ -30,7 +44,7 @@
     type: sum
     label: 'Expenses'
     value_format: '$0.00'
-    sql: ${expenses}
+    sql: ${expenses}*1000
 
   - measure: reports_submitted_m
     type: sum

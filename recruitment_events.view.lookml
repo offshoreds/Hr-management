@@ -86,7 +86,7 @@
     type: sum
     label: 'Offers Rejected'
     sql: ${offers_rejected}
-  
+    
 
   - measure: count
     type: count

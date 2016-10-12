@@ -1,43 +1,63 @@
-- dashboard: workforce_effectiveness
-  title: HR-Workforce Effectiveness
+- dashboard: HR-Overview
+  title: HR-Overview
   layout: grid
   rows:
-    - elements: [Single_Value_Emp,Contingent_Employees_HeadCount,Supervisors]
+    - elements: [Workforce_Effectiveness]
       height: 110
-    - elements: [Avg_employees,Voluntary_Termination,Involuntary_Termination]
+      
+    - elements: [Employee_Headcount,Employees_Termination,Employee_retirement]
+      height: 210
+      
+    - elements: [Recruitment]
       height: 110  
-    - elements: [Employees_Headcount,Employees_Turnover]
-      height: 400
+    - elements: [New_hires,Total_FTE,Employees_Turnover]
+      height: 210  
       
-    - elements: [Employee_Vs_SUpervisor,Average_employees]
-      height: 400
+    - elements: [Employee_Expenses]
+      height: 110  
       
-    - elements: [Employees_trend,employee_expenses]
-      height: 350
+    - elements: [Total_Expenses,Payroll_Expenses,Highest_Salary]
+      height: 210  
+      
+    - elements: [Expenses_Time_period]
+      height: 330  
+        
+      
+    
 
 #  filters:
 
   elements:
-  - name: Employees_Headcount
-    title: 'Contingent And Permanent Employees'
-    type: looker_column
+  
+  - name: Workforce_Effectiveness
+    type: single_value
     model: Human_Resource_Management
     explore: headcount
-    dimensions: [headcount.Department_name]
-    measures: [headcount.Employees, headcount.Contingent_emp]
-    filters:
-      headcount.Department_name: DEPARTMENT~SHARE~USA,DEPARTMENT~SHARE~IND,DEPARTMENT~SHARE~DEU,DEPARTMENT~SHARE~BRZ,DEPARTMENT~SHARE~AUS,DEPARTMENT~SHARE~NLD,DEPARTMENT~SHARE~NON,DEPARTMENT~SHARE~NOR,DEPARTMENT~SHARE~NUS,DEPARTMENT~SHARE~OII,DEPARTMENT~SHARE~SEA,DEPARTMENT~SHARE~SWE
-    sorts: [headcount.Employees desc]
+    measures: [headcount.Total_Emp, headcount.Total_Emp_2015]
+    dynamic_fields:
+    - table_calculation: calculation_1
+      label: Calculation 1
+      expression: '""'
+      value_format:
+      value_format_name:
+    sorts: [headcount.Total_Emp desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
-    stacking: ''
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: normal
     show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: false
+    show_view_names: true
     limit_displayed_rows: false
     y_axis_combined: true
     show_y_axis_labels: true
@@ -53,38 +73,259 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
-    series_types:
-      headcount.Emp_Turnover: line
-      headcount.Employees: line
-      
+    series_types: {}
+    value_format: ''
+    comparison_label: Employees Headcount Year 2015
+    single_value_title: ''
+    hidden_fields: [headcount.Total_Emp_2015, headcount.Total_Emp]
     
-  - name: Single_Value_Emp
-    title: 'Employees HeadCount'
+    
+  - name: Employee_Headcount
     type: single_value
-    explore: headcount
     model: Human_Resource_Management
-    measures: [headcount.Contingent_emp]
+    explore: headcount
+    measures: [headcount.Total_Emp, headcount.Total_Emp_2015]
+    sorts: [headcount.Total_Emp desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: normal
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    value_format: '#,##0'
+    comparison_label: Employees Headcount Year 2015
+    single_value_title: '# Employees Headcount'
+    
+  - name: Employees_Termination
+    type: single_value
+    model: Human_Resource_Management
+    explore: headcount
+    measures: [headcount.Total_Emp_termi, headcount.Total_Emp_2015_termi]
+    sorts: [headcount.Total_Emp_termi desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: normal
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    value_format: ''
+    comparison_label: Employees Termination Year 2015
+    single_value_title: '# Employees Termination'
+    
+  - name: Employee_retirement
+    type: single_value
+    model: Human_Resource_Management
+    explore: headcount
+    measures: [headcount.retirement_emp, headcount.Retirement_emp_2015]
+    sorts: [headcount.retirement_emp desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: '# Retirements'
+    comparison_label: Retirements Year 2015
+    
+  
+  - name: Recruitment
+    type: single_value
+    model: Human_Resource_Management
+    explore: headcount
+    measures: [headcount.Total_Emp, headcount.Total_Emp_2015]
+    dynamic_fields:
+    - table_calculation: calculation_1
+      label: Calculation 1
+      expression: '""'
+      value_format:
+      value_format_name:
+    sorts: [headcount.Total_Emp desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: normal
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    value_format: ''
+    comparison_label: Employees Headcount Year 2015
+    single_value_title: ''
+    hidden_fields: [headcount.Total_Emp_2015, headcount.Total_Emp]
+    
+    
+  - name: New_hires
+    type: single_value
+    model: Human_Resource_Management
+    explore: new_hire_trend
+    measures: [new_hire_trend.new_hires_ytd_m, new_hire_trend.new_hires_ytd_m_2015]
+    sorts: [new_hire_trend.new_hires_ytd_m desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: '# New Hires'
+    comparison_label: New Hires Previous Year 2015
+    
+    
+  - name: Total_FTE
+    type: single_value
+    model: Human_Resource_Management
+    explore: headcount
+    measures: [headcount.Contingent_emp, headcount.Contingent_emp_2015]
     sorts: [headcount.Contingent_emp desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
+    custom_color_enabled: true
+    custom_color: '#40427e'
     show_single_value_title: true
-    show_comparison: false
+    show_comparison: true
     comparison_type: value
     comparison_reverse_colors: false
     show_comparison_label: true
-    stacking: ''
+    stacking: normal
     show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: false
+    show_view_names: true
     limit_displayed_rows: false
     y_axis_combined: true
     show_y_axis_labels: true
@@ -100,72 +341,28 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
     series_types: {}
-    single_value_title: '# Permanent Employees HeadCount'
-  
-  
-  - name: Contingent_Employees_HeadCount
-    title: '# Contingent Employees HeadCount'
-    type: single_value
-    explore: headcount
-    model: Human_Resource_Management
-    measures: [headcount.Employees]
-    sorts: [headcount.Employees desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
-    series_types: {}
-    single_value_title: '# Contingent Employees HeadCount'
+    value_format: '#,##0'
+    comparison_label: FTE Year 2015
+    single_value_title: '# Total FTE'
     
     
   - name: Employees_Turnover
-    title: 'Employees and Turnover'
-    type: looker_column
+    type: single_value
     model: Human_Resource_Management
     explore: headcount
-    dimensions: [headcount.Department_name]
-    measures: [headcount.Employees, headcount.Emp_Turnover, headcount.Contingent_emp]
-    filters:
-      headcount.Department_name: DEPARTMENT~SHARE~USA,DEPARTMENT~SHARE~IND,DEPARTMENT~SHARE~DEU,DEPARTMENT~SHARE~BRZ,DEPARTMENT~SHARE~AUS,DEPARTMENT~SHARE~NLD,DEPARTMENT~SHARE~NON,DEPARTMENT~SHARE~NOR,DEPARTMENT~SHARE~NUS,DEPARTMENT~SHARE~OII,DEPARTMENT~SHARE~SEA,DEPARTMENT~SHARE~SWE
-    sorts: [headcount.Employees desc]
+    measures: [headcount.Emp_Turnover, headcount.Emp_Turnover_2015]
+    sorts: [headcount.Emp_Turnover desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
     stacking: ''
     show_value_labels: false
     label_density: 25
@@ -188,224 +385,45 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
     show_null_points: true
     point_style: circle
     interpolation: linear
-    series_types:
-      headcount.Emp_Turnover: line
-  
-  
-  
-  - name: Supervisors
-    title: '# Supervisors'
-    type: single_value
-    model: Human_Resource_Management
-    explore: supervisorreport
-    measures: [supervisorreport.Supervisor_count]
-    sorts: [supervisorreport.Supervisor_count desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
     series_types: {}
-    single_value_title: '# Supervisors'
- 
-  
-  - name: Avg_employees
-    title: '# Avg Employees Per Supervisor'
-    type: single_value
-    model: Human_Resource_Management
-    explore: supervisorreport
-    measures: [supervisorreport.Average_Emp]
-    sorts: [supervisorreport.Average_Emp desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    series_types: {}
-    single_value_title: '# Avg Employees Per Supervisor'
+    comparison_label: Employees Turnover Year 2015
+    single_value_title: '# Employees Turnover'
     
-  
-  - name: Employee_Vs_SUpervisor
-    title: 'Supervisor Span of Control'
-    type: looker_column
-    model: Human_Resource_Management
-    explore: supervisorreport
-    dimensions: [supervisorreport.Department]
-    measures: [supervisorreport.Supervisor_count, supervisorreport.Emp_count]
-    sorts: [supervisorreport.Supervisor_count desc]
-    limit: '12'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: false
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    show_null_points: false
-    point_style: circle
-    interpolation: linear
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    series_types:
-      supervisorreport.Supervisor_count: line
-      
-  
-  - name: Average_employees
-    title: 'Average Employees'
-    type: looker_line
-    model: Human_Resource_Management
-    explore: supervisorreport
-    dimensions: [supervisorreport.Department]
-    measures: [supervisorreport.Supervisor_count, supervisorreport.Average_Emp]
-    sorts: [supervisorreport.Supervisor_count desc]
-    limit: '10'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: false
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    show_null_points: false
-    point_style: circle
-    interpolation: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    series_types: {}
-    
-   
-  - name: Employees_trend
-    title: 'Employees Trend'
-    type: looker_column
+  - name: Employee_Expenses
+    type: single_value
     model: Human_Resource_Management
     explore: headcount
-    dimensions: [headcount.Year, headcount.Quarter]
-    measures: [headcount.Contingent_emp, headcount.Employees, headcount.Total_Emp_termi_voluntary,
-      headcount.Total_Emp_termi_involuntary, headcount.retirement_emp]
-    filters:
-      headcount.Year: '2014,2015,2016'
-    sorts: [headcount.Year, headcount.Quarter]
+    measures: [headcount.Total_Emp, headcount.Total_Emp_2015]
+    dynamic_fields:
+    - table_calculation: calculation_1
+      label: Calculation 1
+      expression: '""'
+      value_format:
+      value_format_name:
+    sorts: [headcount.Total_Emp desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
     stacking: normal
     show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: false
+    show_view_names: true
     limit_displayed_rows: false
     y_axis_combined: true
-    show_y_axis_labels: false
+    show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
@@ -418,124 +436,78 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
+    series_types: {}
+    value_format: ''
+    comparison_label: Employees Headcount Year 2015
+    single_value_title: ''
+    hidden_fields: [headcount.Total_Emp_2015, headcount.Total_Emp]
+    
+  - name: Total_Expenses
+    type: single_value
+    model: Human_Resource_Management
+    explore: expenses_by_time_period
+    measures: [expenses_by_time_period.amount_spent_m, expenses_by_time_period.amount_spent_m_2015]
+    filters:
+      expenses_by_time_period.year: '2014,2015,2016'
+    sorts: [expenses_by_time_period.amount_spent_m desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
     show_null_points: true
     point_style: none
     interpolation: linear
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
     value_labels: legend
     label_type: labPer
-    series_types: {}
-    y_axis_reversed: false
-    hidden_series: []
-    column_group_spacing_ratio: 0.5
-
-  
-  
-  - name: Voluntary_Termination
-    title: '# Voluntary Termination'
-    type: single_value
-    model: Human_Resource_Management
-    explore: employees_trend
-    measures: [employees_trend.voluntery_employees]
-    sorts: [employees_trend.voluntery_employees desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    stacking: normal
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
     ordering: none
     show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
     series_types: {}
-    single_value_title: '# Voluntary Termination'
-
-
-  - name: Involuntary_Termination
-    title: '# Involuntary Termination'
-    type: single_value
-    model: Human_Resource_Management
-    explore: employees_trend
-    measures: [employees_trend.involuntary_termination_count]
-    sorts: [employees_trend.involuntary_termination_count desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    stacking: normal
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    series_types: {}
-    single_value_title: '# Involuntary Termination'
- 
+    comparison_label: Total Expenses Year 2015
   
-  - name: employee_expenses
-    title: 'Employee Expenses'
-    type: looker_column
+  - name: Payroll_Expenses
+    type: single_value
     model: Human_Resource_Management
     explore: payroll
-    dimensions: [payroll.year, payroll.quarter]
-    measures: [payroll.payroll, payroll.support, payroll.overtime]
+    measures: [payroll.payroll, payroll.payroll_2015]
     filters:
       payroll.year: '2014,2015,2016'
-    sorts: [payroll.year, payroll.quarter]
+    sorts: [payroll.payroll desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
     stacking: normal
     show_value_labels: false
     label_density: 25
@@ -565,6 +537,113 @@
     label_type: labPer
     series_types: {}
     column_group_spacing_ratio: 0.5
-
- 
- 
+    single_value_title: Total Payroll Expenses
+    comparison_label: Payroll Expenses Year 2015
+    
+  - name: Highest_Salary
+    type: single_value
+    model: Human_Resource_Management
+    explore: salary_compression
+    measures: [salary_compression.high_yearly_amount, salary_compression.lowest_yearly_amount_m]
+    sorts: [salary_compression.high_yearly_amount desc]
+    limit: '5000'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: true
+    custom_color: '#40427e'
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    show_view_names: false
+    show_row_numbers: true
+    truncate_column_names: false
+    hide_totals: false
+    hide_row_totals: false
+    table_theme: editable
+    limit_displayed_rows: false
+    value_labels: legend
+    label_type: per
+    show_value_labels: false
+    font_size: 12
+    stacking: ''
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    inner_radius: 30
+    single_value_title: Highest Pay Salary
+    comparison_label: Lowest Pay Salary
+    
+    
+  - name: Expenses_Time_period
+    title: 'Expenses Over Time Period'
+    type: looker_area
+    model: Human_Resource_Management
+    explore: headcount
+    dimensions: [headcount.Year, headcount.Quarter]
+    measures: [headcount.Total_Emp]
+    filters:
+      headcount.Year: '2014,2015,2016'
+    sorts: [headcount.Year, headcount.Quarter]
+    limit: '18'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    stacking: normal
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    show_null_points: true
+    point_style: none
+    interpolation: linear
+    show_totals_labels: true
+    show_silhouette: false
+    totals_color: '#3c3a32'
+    ordering: none
+    show_null_labels: false
+    custom_color_enabled: true
+    custom_color: '#2d3030'
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: change
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    series_types: {}
+    value_format: '#,##0'
+    comparison_label: '# Year Headcount'
+    single_value_title: '# Employee Headcount'
+    colors: ['#fdbf6f', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f',
+      '#ff7f00', '#cab2d6', '#6a3d9a', '#edbc0e', '#b15928']
+    series_colors: {}
+    
+  
+    

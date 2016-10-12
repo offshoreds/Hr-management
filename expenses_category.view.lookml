@@ -13,8 +13,8 @@
  # measures
  
   - measure: expense_amount_m
-    type: avg
-    value_format: '$0.00'
+    type: sum
+    value_format: '$0.##,, " M"'
     label: 'Expense Amount'
     sql: ${expense_amount}
     

@@ -8,6 +8,8 @@
 
 - include: "workforce_effectiveness.dashboard.lookml" 
 
+- include: "hr_overview.dashboard.lookml"  
+
 - explore: headcount
 
 - explore: supervisorreport

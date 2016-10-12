@@ -1,10 +1,13 @@
 - dashboard: recruitment
-  title: Recruitment
+  title: HR-Recruitment
   layout: grid
   
   rows:
-    - elements: [requisition_event,Recruitment_events,New_hire_view]
-      height: 200
+    - elements: [Job_Openings,Job_requisition,Assessment_Interviews]
+      height: 110  
+    - elements: [Offers_Accepted,Offers_Rejected,New_Hires]
+      height: 110    
+      
     - elements: [New_Hire_Trend,Open_requisition_Overview]
       height: 330
     - elements: [Top_5_Vacancies,Recruitment_Stage]
@@ -18,21 +21,25 @@
 
   elements:
   
-  - name: New_hire_view
-    title: 'Top 5 Hires By Department '
-    type: looker_line
+  
+  - name: New_Hires
+    type: single_value
     model: Human_Resource_Management
-    explore: new_hire_view
-    dimensions: [new_hire_view.department_name]
-    measures: [new_hire_view.hires_m]
-    filters:
-      new_hire_view.department_name: -Oceaneering Worldwide,-Americas Div Ops U MorganCity,-Americas ROV UDC Operations
-    sorts: [new_hire_view.hires_m desc]
-    limit: '5'
+    explore: new_hire_trend
+    measures: [new_hire_trend.new_hires_ytd_m]
+    sorts: [new_hire_trend.new_hires_ytd_m desc]
+    limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
     stacking: ''
-    show_value_labels: true
+    show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
@@ -48,8 +55,8 @@
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
-    show_null_points: false
-    point_style: circle_outline
+    show_null_points: true 
+    point_style: none
     interpolation: linear
     ordering: none
     show_null_labels: false
@@ -58,7 +65,236 @@
     totals_color: '#808080'
     value_labels: legend
     label_type: labPer
+    font_size: 12
     series_types: {}
+    single_value_title: New Hires
+  
+   
+  
+  - name: Job_Openings
+    type: single_value
+    model: Human_Resource_Management
+    explore: requisition_events
+    measures: [requisition_events.Job_openings]
+    filters:
+      requisition_events.Year: '2014,2015,2016'
+    sorts: [requisition_events.Job_openings desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: Job Openings
+    
+    
+  - name: Job_requisition
+    type: single_value
+    model: Human_Resource_Management
+    explore: requisition_events
+    measures: [requisition_events.Job_requisition_opening]
+    filters:
+      requisition_events.Year: '2014,2015,2016'
+    sorts: [requisition_events.Job_requisition_opening desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: Jobs Requested In Requisition
+
+
+  
+
+  
+  
+  
+  - name: Assessment_Interviews
+    type: single_value
+    model: Human_Resource_Management
+    explore: recruitment_events
+    measures: [recruitment_events.assessment_interviews_m]
+    sorts: [recruitment_events.assessment_interviews_m desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    show_view_names: false
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: Assessment Interviews
+    
+    
+
+    
+  - name: Offers_Accepted
+    type: single_value
+    model: Human_Resource_Management
+    explore: recruitment_events
+    measures: [recruitment_events.offers_accepted_m]
+    sorts: [recruitment_events.offers_accepted_m desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    show_view_names: false
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: Offers Accepted
+
+
+    
+    
+  - name: Offers_Rejected
+    type: single_value
+    model: Human_Resource_Management
+    explore: recruitment_events
+    measures: [recruitment_events.offers_rejected_m]
+    sorts: [recruitment_events.offers_rejected_m desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    show_view_names: false
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    single_value_title: Offers Rejected
+
+  
+  
  
   
   - name: vacancy_fill_rate
@@ -178,104 +414,27 @@
     series_types: {}
  
 
-  - name: requisition_event
-    title: 'Requisition Event'
-    model: Human_Resource_Management
-    type: looker_single_record
-    explore: requisition_events
-    measures: [requisition_events.Job_openings, requisition_events.Vacancy_fill_rate,
-      requisition_events.Vacancy_rate, requisition_events.requisition_filled, requisition_events.Job_requisition_opening]
-    filters:
-      requisition_events.Year: '2016,2015,2014'
-    sorts: [requisition_events.Job_openings desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    show_view_names: false
-    show_row_numbers: true
-    truncate_column_names: false
-    hide_totals: false
-    hide_row_totals: false
-    table_theme: editable
-    limit_displayed_rows: false
-    stacking: ''
-    show_value_labels: true
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    label_rotation: 360
-    series_types: {}
-    
-  - name: Recruitment_events
-    title: 'Recruitment Events'
-    type: looker_single_record
-    explore: recruitment_events
-    model: Human_Resource_Management
-    measures: [recruitment_events.application_starts_m, recruitment_events.assessment_interviews_m,
-      recruitment_events.hires_m, recruitment_events.offers_accepted_m, recruitment_events.offers_extended_m,
-      recruitment_events.offers_rejected_m]
-    sorts: [recruitment_events.application_starts_m desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    show_view_names: false
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    series_types: {}
+ 
  
  
   - name: New_Hire_Trend
-    title: 'New Hire Trend'
+    title: 'New Hires Trend'
     type: looker_line
+    model: Human_Resource_Management
     explore: new_hire_trend
-    dimensions: [new_hire_trend.year, new_hire_trend.month]
+    dimensions: [new_hire_trend.year, new_hire_trend.quarter]
     measures: [new_hire_trend.new_hires_ytd_m]
-    sorts: [new_hire_trend.year, new_hire_trend.month desc]
+    sorts: [new_hire_trend.year, new_hire_trend.quarter]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
     stacking: ''
     show_value_labels: false
     label_density: 25
-    model: Human_Resource_Management
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: true
+    show_view_names: false
     limit_displayed_rows: false
     y_axis_combined: true
     show_y_axis_labels: true
@@ -297,8 +456,10 @@
     value_labels: legend
     label_type: labPer
     font_size: 12
-    series_types: {}
-    
+    series_types:
+      __FILE: HR_Management/Recruitment.dashboard.lookml
+      __LINE_NUM: 616
+  
   - name: Open_requisition_Overview
     title: 'Open Requisition Overview'
     type: looker_pie
@@ -314,7 +475,7 @@
     query_timezone: America/Los_Angeles
     value_labels: legend
     label_type: labPer
-    show_view_names: true
+    show_view_names: false
     stacking: ''
     show_value_labels: false
     label_density: 25
@@ -379,13 +540,13 @@
     
   - name: Recruitment_Stage
     title: 'Recruitment Stage'
-    type: looker_bar
+    type: looker_column
     model: Human_Resource_Management
     explore: recruitment_stage
     dimensions: [recruitment_stage.year, recruitment_stage.quarter]
-    measures: [recruitment_stage.application_start_m, recruitment_stage.offer_extended_m,
-      recruitment_stage.requisition_approved_m, recruitment_stage.timetofill_m, recruitment_stage.timetohire_m]
-    sorts: [recruitment_stage.application_start_m desc]
+    measures: [recruitment_stage.requisition_approved_m, recruitment_stage.application_start_m,
+      recruitment_stage.offer_extended_m]
+    sorts: [recruitment_stage.year]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
@@ -416,6 +577,7 @@
     interpolation: linear
     series_types: {}
     column_group_spacing_ratio: 0.5
+  
  
  
   - name: New_Hire_source
@@ -430,12 +592,12 @@
     column_limit: '50'
     query_timezone: America/Los_Angeles
     stacking: ''
-    show_value_labels: true
+    show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: true
+    show_view_names: false
     limit_displayed_rows: false
     y_axis_combined: true
     show_y_axis_labels: true

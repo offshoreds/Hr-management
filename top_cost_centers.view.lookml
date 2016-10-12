@@ -16,6 +16,10 @@
     type: string
     sql: ${TABLE}.TOTAL_EXPENSES_YEAR_AGO
     
+  - dimension: cost_center_name
+    type: string
+    sql: ${TABLE}.COST_CENTER_NAME
+    
     
   # MEASURES
   

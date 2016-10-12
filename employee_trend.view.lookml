@@ -26,10 +26,10 @@
   # measures
   
   - measure: voluntery_employees
-    label: 'Voluntary Termination '
+    label: 'Voluntary Termination'
     type: sum
     value_format: '0'
-    sql: ${voluntery}/10
+    sql: ${voluntery}*10
 
   - measure: employees_count
     label: 'Employees'
@@ -41,9 +41,26 @@
     label: 'involuntary Termination'
     type: sum
     value_format: '0'
-    sql: ${involuntary_termination}
+    sql: ${involuntary_termination}*10
 
   - measure: count
     type: count
     drill_fields: []
+   
+  - measure: Employees_Termination
+    label: 'Employees Termination'
+    type: sum
+    value_format: '#,##0'
+    sql: ${voluntery}*10 + ${involuntary_termination}*10
+    
+  - measure: Employees_Termination_2015
+    label: 'Employees Termination 2015'
+    type: sum
+    value_format: '#,##0'
+    sql: ${voluntery}*10 + ${involuntary_termination}*10
+    filters:
+        year: '2015'
+
+
+    
     

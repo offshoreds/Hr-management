@@ -48,9 +48,28 @@
   - measure: pay_yearly_amount_m
     type: sum
     label: 'Pay Yearly Amount'
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     sql: ${pay_yearly_amount}
-
+    
+    
+  - measure: high_yearly_amount
+    type: sum
+    label: 'Highest Pay Yearly Amount'
+    value_format: '$#,##0.00'
+    sql: ${pay_yearly_amount}/10
+    filters: 
+        pay_grade_name: 'S1'
+    
+  - measure: lowest_yearly_amount_m
+    type: sum
+    label: 'Lowest Pay Yearly Amount'
+    value_format: '$#,##0.00'
+    sql: ${pay_yearly_amount}/10
+    filters: 
+        pay_grade_name: 'AP5'
+    
+    
+    
   - measure: percent_midpoint_m
     type: sum
     label: 'Percent Midpoint'

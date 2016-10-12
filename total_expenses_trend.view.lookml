@@ -13,14 +13,20 @@
   - dimension: year
     type: string
     sql: ${TABLE}.YEAR
+    
+  - dimension: Quarter
+    type: string
+    sql: ${TABLE}.QUARTER
+    
 
 
   # measures
+ 
   
   - measure: cumulative_expense_amount_m
     type: sum
     label: 'Cumulative Expense Amount'
-    value_format: '$0.00'
+    value_format: '$0.##,, " M"'
     sql: ${cumulative_expense_amount}
   
   - measure: count

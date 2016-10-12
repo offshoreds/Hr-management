@@ -3,11 +3,11 @@
   fields:
 
   - dimension: overtime_expense
-    type: number
+    type: string
     sql: ${TABLE}.OVERTIME_EXPENSE
 
   - dimension: payroll_expense
-    type: number
+    type: string
     sql: ${TABLE}.PAYROLL_EXPENSE
 
   - dimension: quarter
@@ -15,7 +15,7 @@
     sql: ${TABLE}.QUARTER
 
   - dimension: support_expense
-    type: number
+    type: string
     sql: ${TABLE}.SUPPORT_EXPENSE
 
   - dimension: year
@@ -27,18 +27,29 @@
   - measure: overtime
     label: 'Overtime Expenses'
     type: sum
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     sql: ${overtime_expense}/1000000
+    
+  
+  - measure: payroll_2015
+    label: 'Payroll Expenses 2015'
+    value_format: '$#,##0.00'
+    type: sum
+    sql: ${payroll_expense}/100000
+    filters: 
+        year: '2015'
+  
 
   - measure: payroll
     label: 'Payroll Expenses'
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     type: sum
-    sql: ${payroll_expense}/1000000
+    sql: ${payroll_expense}/100000
+    
   
   - measure: support
     type: sum
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     label: 'Support Expenses'
     sql: ${support_expense}*100
 

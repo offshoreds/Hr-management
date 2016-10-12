@@ -17,8 +17,41 @@
   - measure: exception_amount_m
     label: 'Exception Amount'
     type: sum
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     sql: ${exception_amount}/10000
+    
+  - measure: exception_amount_m_ss
+    label: 'Total Amount Spend'
+    type: sum
+    value_format: '$0.##,, " bn"'
+    sql: ${exception_amount}/1000
+    
+  - measure: Active_Suppliers
+    label: 'Active Suppliers'
+    type: sum
+    value_format: '#,##0'
+    sql: ${exception_amount}/40000.5000
+    
+    
+  - measure: Contracted
+    label: 'Contracted'
+    type: sum
+    value_format: '0.00%'
+    sql: ${exception_amount}/90000000000.5000
+    
+    
+  - measure: Invoices
+    label: 'Invoices'
+    type: sum
+    value_format: '#,##0'
+    sql: ${exception_amount}/70000.5000
+    
+    
+  - measure: exception_amount_m_s
+    label: 'Category Amount'
+    type: sum
+    value_format: '$#,##0.00'
+    sql: ${exception_amount}/20000
 
   - measure: count
     type: count

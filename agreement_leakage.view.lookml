@@ -8,6 +8,7 @@
 
   - dimension: business_id
     type: string
+    hidden: true
     sql: ${TABLE}.BUSINESS_ID
 
   - dimension: business_name
@@ -18,9 +19,15 @@
   
   - measure: amount_m
     type: sum
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     label: 'Contract Leakage Amount'
     sql: ${amount}
+    
+  - measure: amount_m_s
+    type: sum
+    value_format: '$#,##0.00'
+    label: 'Amount Spend'
+    sql: ${amount}/2.5
   
   
 
