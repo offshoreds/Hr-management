@@ -7,6 +7,7 @@
     sql: ${TABLE}.AMOUNT
 
   - dimension: suplier
+    label: 'Supplier'
     type: string
     sql: ${TABLE}.SUPLIER
     

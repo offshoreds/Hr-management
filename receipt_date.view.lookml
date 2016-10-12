@@ -23,12 +23,14 @@
   - measure: amount_m
     type: sum
     label: 'Receipt Date Exception Amount'
-    sql: ${amount}
+    value_format: '$#,##0.00'
+    sql: ${amount}*1000
 
   - measure: percent_reception_m
     type: sum
+    value_format: '#,##0.00%'
     label: 'Receipt Date Exception Percent'
-    sql: ${percent_reception}
+    sql: ${percent_reception}/100
 
   - measure: count
     type: count

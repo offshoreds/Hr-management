@@ -16,6 +16,7 @@
   - measure: returned_amount_m
     type: sum
     label: 'Returned Amount'
+    value_format: '$#,##0.00'
     sql: ${returned_amount}
 
   - measure: count

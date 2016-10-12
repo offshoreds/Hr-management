@@ -11,6 +11,10 @@
     type: string
     sql: ${TABLE}.SUPPLIER
     
+  - dimension: Category
+    type: string
+    sql: ${TABLE}.CATEGORY
+    
     # measures
     
     

@@ -18,7 +18,7 @@
     label: 'Non-Negotiated Purchase Amount'
     value_format: '$0.00'
     type: sum
-    sql: ${bu_amount}/100000
+    sql: ${bu_amount}*1000
 
 
   - measure: count

@@ -20,7 +20,7 @@
     
   - measure: return_amount_m
     type: sum
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     label: 'Return Amount'
     sql: ${return_amount}
     
@@ -28,7 +28,7 @@
     label: 'Return %'
     type: sum
     value_format: '0.00\%'
-    sql: ${return_percent}
+    sql: ${return_percent}*1000
 
 
   - measure: count

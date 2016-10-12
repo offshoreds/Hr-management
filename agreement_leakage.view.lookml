@@ -15,6 +15,10 @@
     type: string
     sql: ${TABLE}.BUSINESS_NAME
     
+  - dimension: business_unit
+    type: string
+    sql: ${TABLE}.BUSINESS_UNIT
+    
   # measures 
   
   - measure: amount_m
