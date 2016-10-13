@@ -25,6 +25,9 @@
     label: 'New Hires'
     type: sum
     sql: ${new_hires_ytd}
+    links:
+    - label: Recruitment Details
+      url: /dashboards/40
     
   
   - measure : new_hires_ytd_m_2015

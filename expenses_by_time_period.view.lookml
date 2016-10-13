@@ -23,13 +23,16 @@
   - measure: amount_spent_m
     type: sum
     label: 'Amount Spent'
-    value_format:  '$#,##0.00'
-    sql: ${amount_spent}
+    value_format: '$0.##,, " M"'
+    sql: ${amount_spent}*5
+    links:
+    - label: Employee Expenses details
+      url: /dashboards/39
     
   - measure: amount_spent_m_2015
     type: sum
     label: 'Amount Spent 2015'
-    value_format:  '$#,##0.00'
+    value_format: '$0.##,, " M"'
     sql: ${amount_spent}
     filters:
         year: '2015'

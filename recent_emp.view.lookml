@@ -37,7 +37,7 @@
   - measure: Total_amount_spent_m
     type: sum
     label: 'Amount Spent'
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     sql: ${Total_amount_spent}
   
   - measure: count

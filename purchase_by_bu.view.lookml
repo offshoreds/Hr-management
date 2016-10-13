@@ -16,7 +16,7 @@
     
   - measure: amount_m
     label: 'Non-Negotiated Purchase Amount'
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     type: sum
     sql: ${bu_amount}*1000
 

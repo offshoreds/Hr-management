@@ -19,12 +19,12 @@
  
   - measure: Job_openings
     type: sum
-    value_format: '0'
+    value_format: '#,##0'
     sql: ${Openings}
 
   - measure: Job_requisition_opening
     type: sum
-    value_format: '0'
+    value_format: '#,##0'
     sql: ${Requisition_opening}
     
   - measure: Vacancy_rate

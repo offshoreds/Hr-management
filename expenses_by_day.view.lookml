@@ -43,7 +43,7 @@
   - measure: expenses_m
     type: sum
     label: 'Expenses'
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     sql: ${expenses}*1000
 
   - measure: reports_submitted_m

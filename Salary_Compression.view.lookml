@@ -59,6 +59,11 @@
     sql: ${pay_yearly_amount}/10
     filters: 
         pay_grade_name: 'S1'
+        
+    links:
+    - label: Employee Expenses details
+      url: /dashboards/39
+    
     
   - measure: lowest_yearly_amount_m
     type: sum

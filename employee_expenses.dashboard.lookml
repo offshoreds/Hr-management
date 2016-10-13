@@ -3,7 +3,7 @@
   layout: grid
   rows:
   
-    - elements: [Total_Salary,Average_Salary,Expenses_By_Catagories]
+    - elements: [Total_Salary,Average_Salary,Expenses_By_Categories]
       height:  100
 
       
@@ -26,7 +26,7 @@
 
   elements:
   
-  - name: Expenses_By_Catagories
+  - name: Expenses_By_Categories
     type: single_value
     model: Human_Resource_Management
     explore: expenses_category
@@ -379,11 +379,11 @@
     show_view_names: false
     limit_displayed_rows: false
     y_axis_combined: true
-    show_y_axis_labels: true
+    show_y_axis_labels: false
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-    show_x_axis_label: true
+    show_x_axis_label: false
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear

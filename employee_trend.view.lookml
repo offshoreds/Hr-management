@@ -28,7 +28,7 @@
   - measure: voluntery_employees
     label: 'Voluntary Termination'
     type: sum
-    value_format: '0'
+    value_format: '#,##0'
     sql: ${voluntery}*10
 
   - measure: employees_count
@@ -40,7 +40,7 @@
   - measure: involuntary_termination_count
     label: 'involuntary Termination'
     type: sum
-    value_format: '0'
+    value_format: '#,##0'
     sql: ${involuntary_termination}*10
 
   - measure: count

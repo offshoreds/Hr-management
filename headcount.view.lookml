@@ -44,6 +44,9 @@
     sql: ${Contingent_head_count}
     filters: 
         Year: '2014,2015,2016'
+    links:
+    - label: Recruitment Details
+      url: /dashboards/40
         
   - measure: Contingent_emp_2015
     label: ' Permanent Employees 2015'
@@ -59,6 +62,9 @@
     type: sum
     value_format: '#,##0'
     sql: ${Contingent_head_count}/100
+    links: 
+    - label: Workforce Effectiveness Details
+      url: /dashboards/41
     
         
   - measure: Retirement_emp_2015
@@ -84,6 +90,9 @@
     sql: ${Turnover}/1000
     filters: 
         Year: '2014,2015,2016'
+    links:
+    - label: Recruitment Details
+      url: /dashboards/40
         
         
   - measure: Emp_Turnover_2015
@@ -109,6 +118,7 @@
         Year: '2015'
         Quarter: 'Q4'
     
+    
   - measure: Total_Emp
     label: 'Total Employees'
     type: sum
@@ -116,6 +126,10 @@
     sql:  ${Contingent_head_count}+${Emp_headcount}
     filters: 
         Year: '2014,2015,2016'
+        
+    links: 
+    - label: Workforce Effectiveness Details
+      url: /dashboards/41
     
   - measure: Total_Emp_termi
     label: 'Employees Termination'
@@ -124,6 +138,9 @@
     sql:  ${Contingent_head_count}/2+${Emp_headcount}/500
     filters: 
         Year: '2014,2015,2016'
+    links: 
+    - label: Workforce Effectiveness Details
+      url: /dashboards/41
         
         
   - measure: Total_Emp_termi_voluntary

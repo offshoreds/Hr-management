@@ -2,21 +2,18 @@
   title: HR-Overview
   layout: grid
   rows:
-    - elements: [Workforce_Effectiveness]
-      height: 110
+   
       
-    - elements: [Employee_Headcount,Employees_Termination,Employee_retirement]
+    - elements: [Workforce_Effectiveness,Employee_Headcount,Employees_Termination,Employee_retirement]
       height: 210
       
-    - elements: [Recruitment]
-      height: 110  
-    - elements: [New_hires,Total_FTE,Employees_Turnover]
+  
+    - elements: [Recruitment,New_hires,Total_FTE,Employees_Turnover]
       height: 210  
       
-    - elements: [Employee_Expenses]
-      height: 110  
+  
       
-    - elements: [Total_Expenses,Payroll_Expenses,Highest_Salary]
+    - elements: [Employee_Expenses,Total_Expenses,Payroll_Expenses,Highest_Salary]
       height: 210  
       
     - elements: [Expenses_Time_period]

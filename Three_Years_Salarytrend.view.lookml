@@ -27,7 +27,7 @@
     type: avg   
     value_format: '$0.##,, " M"'
     label: 'Average Annual Base Salary'
-    sql: ${total_annual_base_salary}
+    sql: ${total_annual_base_salary}/10
 
   - measure: employee_head_count_m
     label: 'Employee Headcount'
@@ -38,7 +38,7 @@
     type: sum
     value_format: '$0.##,, " M"'
     label: 'Total Annual Base Salary'
-    sql: ${total_annual_base_salary}
+    sql: ${total_annual_base_salary}/100
     
   - measure: count
     type: count

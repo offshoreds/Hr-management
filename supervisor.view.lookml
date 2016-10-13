@@ -42,7 +42,7 @@
 
   - measure: Supervisor_count
     label: 'Supervisors'
-    value_format: '0'
+    value_format: '#,##0'
     type: sum
     sql: ${Supervisor}/100
   

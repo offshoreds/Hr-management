@@ -1,7 +1,8 @@
 - connection: look
 
 - include: "*.view.lookml"       # include all views in this project
-- include: "*.dashboard.lookml"  # include all dashboards in this project
+- include: "Sepnd_Analytics.dashboard.lookml"
+- include: "Spend_Performance.dashboard.lookml"
 
 - explore: contract_leakage_top_supplier
 

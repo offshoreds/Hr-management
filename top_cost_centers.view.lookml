@@ -28,11 +28,11 @@
   - measure: total_expenses_m
     label: 'Total Expenses'
     type: sum
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     sql: ${total_expenses}
 
   - measure: total_expenses_year_ago_m
-    value_format: '$0.00'
+    value_format: '$#,##0.00'
     type: sum
     label: 'Total Expenses Year Ago'
     sql: ${total_expenses_year_ago}
