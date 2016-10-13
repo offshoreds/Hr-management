@@ -87,7 +87,7 @@
     label: 'Turnover %'
     type: sum
     value_format: '0.##\%'
-    sql: ${Turnover}/1000
+    sql: ${Turnover}/100
     filters: 
         Year: '2014,2015,2016'
     links:
@@ -99,7 +99,7 @@
     label: 'Employee Turnover'
     value_format: '0.##\%'
     type: sum
-    sql: ${Turnover}/1000
+    sql: ${Turnover}/100
     filters: 
         Year: '2015'
         

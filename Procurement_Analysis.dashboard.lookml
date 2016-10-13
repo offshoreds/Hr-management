@@ -429,7 +429,7 @@
     model: Procurement
     explore: variance_supplier
     dimensions: [variance_supplier.supplier]
-    measures: [variance_supplier.invoice_amount_m, variance_supplier.invoice_percent_m]
+    measures: [variance_supplier.invoice_amount_mM, variance_supplier.invoice_percent_m]
     sorts: [variance_supplier.invoice_amount_m desc]
     limit: '500'
     column_limit: '50'

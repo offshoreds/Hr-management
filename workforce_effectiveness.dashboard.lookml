@@ -174,12 +174,12 @@
     y_axis_gridlines: true
     show_view_names: false
     limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
+    y_axis_combined: false
+    show_y_axis_labels: false
+    show_y_axis_ticks: false
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-    show_x_axis_label: true
+    show_x_axis_label: false
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
@@ -200,7 +200,9 @@
     interpolation: linear
     series_types:
       headcount.Emp_Turnover: line
-  
+      __FILE: HR_Management/workforce_effectiveness.dashboard.lookml
+      __LINE_NUM: 202
+
   
   
   - name: Supervisors
@@ -355,7 +357,7 @@
     y_axis_gridlines: true
     show_view_names: false
     limit_displayed_rows: false
-    y_axis_combined: true
+    y_axis_combined: false
     show_y_axis_labels: false
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -379,8 +381,10 @@
     comparison_type: value
     comparison_reverse_colors: false
     show_comparison_label: true
-    series_types: {}
-    
+    series_types:
+    __FILE: HR_Management/workforce_effectiveness.dashboard.lookml
+    __LINE_NUM: 384
+
    
   - name: Employees_trend
     title: 'Employees Trend'

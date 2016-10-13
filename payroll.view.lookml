@@ -28,7 +28,7 @@
     label: 'Overtime Expenses'
     type: sum
     value_format: '$#,##0.00'
-    sql: ${overtime_expense}/1000000
+    sql: ${overtime_expense}/10000
     
   
   - measure: payroll_2015
@@ -48,6 +48,15 @@
     links:
     - label: Employee Expenses details
       url: /dashboards/39
+      
+  - measure: payroll_M
+    label: 'Payroll Expenses'
+    value_format: '$#,##0.00'
+    type: sum
+    sql: ${payroll_expense}/100000
+    links:
+    - label: Employee Expenses details
+      url: /dashboards/39
     
     
   
@@ -55,7 +64,7 @@
     type: sum
     value_format: '$#,##0.00'
     label: 'Support Expenses'
-    sql: ${support_expense}*100
+    sql: ${support_expense}*1000
 
   - measure: count
     type: count
