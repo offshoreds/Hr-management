@@ -35,10 +35,12 @@
   - measure: application_start_m
     label: 'Application Start'
     type: sum
+    value_format: '#,###'
     sql: ${application_start}
 
   - measure: offer_extended_m
     label: 'Offer Extended'
+    value_format: '#,###'
     type: sum
     sql: ${offer_extended}
 
@@ -46,6 +48,7 @@
   - measure: requisition_approved_m
     label: 'Requisition Approved'
     type: sum
+    value_format: '#,###'
     sql: ${requisition_approved}
 
   - measure: timetofill_m

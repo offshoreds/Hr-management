@@ -23,7 +23,7 @@
   
   - measure: Employee_Hires_m
     label: 'New Hires'
-    value_format: '0'
+    value_format: '#,##0'
     type: sum
     sql: ${hires}
     

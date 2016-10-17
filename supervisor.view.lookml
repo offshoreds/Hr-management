@@ -36,7 +36,7 @@
     
   - measure: Emp_count
     label: 'Employees'
-    value_format: '0'
+    value_format: '#,##0'
     type: sum
     sql: ${Employee}
 
@@ -52,7 +52,7 @@
   - measure: Average_Emp
     label: ' Average Employees'
     type: sum
-    value_format: '0'
+    value_format: '#,##0'
     sql: ${Avg_emp}
     filters:
         Year: '2016'

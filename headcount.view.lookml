@@ -21,7 +21,10 @@
     type: string
     sql: ${TABLE}.VOL_TERM 
    
-    
+   
+  - dimension: TERMINATION
+    type: string
+    sql: ${TABLE}.TERMINATION  
 
   - dimension: Department_name
     type: string
@@ -183,7 +186,7 @@
     label: 'Employees Termination'
     type: sum
     value_format: '#,##0'
-    sql:  ${Contingent_head_count}/70+${Emp_headcount}/500
+    sql:  ${TERMINATION}
     filters: 
         Year: '2016'
        
@@ -233,7 +236,7 @@
     label: 'Previous Year Employees Termination '
     type: sum
     value_format: '#,##0'
-    sql:  ${Contingent_head_count}/55+${Emp_headcount}/500
+    sql:  ${TERMINATION}
     filters: 
         Year: '2015'
         

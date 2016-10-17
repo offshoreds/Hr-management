@@ -28,7 +28,7 @@
   - measure: employee_headcount_m
     type: sum
     label: 'Employee Headcount'
-    value_format: '0'
+    value_format: '#,###'
     sql: ${employee_headcount}
 
   - measure: vacancy_rate_m
