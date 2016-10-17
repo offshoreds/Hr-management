@@ -28,14 +28,14 @@
   - measure: spend_amount_mb
     type: sum
     label: 'Spend Amount'
-    value_format: '$#,##0.00'
-    sql: ${spend_amount_bs}
+    value_format: '$#,##0'
+    sql: ${spend_amount_bs}/100
 
   - measure: spend_percent_mb
     type: sum
     label: 'Spend Percent'
-    value_format: '0.00%'
-    sql: ${spend_percent_bs}/10
+    value_format: '0%'
+    sql: ${spend_percent_bs}/70
   
   
 

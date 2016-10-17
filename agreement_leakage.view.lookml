@@ -23,15 +23,15 @@
   
   - measure: amount_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Contract Leakage Amount'
     sql: ${amount}
     
   - measure: amount_m_s
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Amount Spend'
-    sql: ${amount}/2.5
+    sql: ${amount}/8.5
   
   
 

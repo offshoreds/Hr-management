@@ -24,7 +24,7 @@
   - measure: Employee_Hires_m
     label: 'New Hires'
     value_format: '0'
-    type: avg
+    type: sum
     sql: ${hires}
     
   - measure: count

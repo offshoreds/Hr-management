@@ -38,20 +38,24 @@
     label: 'Employees'
     value_format: '0'
     type: sum
-    sql: ${Employee}/1000
+    sql: ${Employee}
 
   - measure: Supervisor_count
     label: 'Supervisors'
     value_format: '#,##0'
     type: sum
-    sql: ${Supervisor}/100
-  
+    sql: ${Supervisor}
+    filters:
+        Year: '2016'
+        
+        
   - measure: Average_Emp
     label: ' Average Employees'
     type: sum
     value_format: '0'
-    sql: ${Avg_emp}/1000
-    
+    sql: ${Avg_emp}
+    filters:
+        Year: '2016'
     
     
     

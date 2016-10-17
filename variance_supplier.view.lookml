@@ -27,13 +27,13 @@
   - measure: invoice_amount_mM
     type: sum
     label: 'Invoice Price Variance Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${invoice_amount}
     
   
   - measure: invoice_percent_m
     type: sum
-    value_format: '0.00\%'
+    value_format: '0\%'
     label: 'Invoice Price Variance %'
     sql: ${invoice_percent}
 

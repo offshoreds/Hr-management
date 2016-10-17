@@ -44,7 +44,7 @@
   - measure: avg_invoice_price_m
     type: sum
     label: 'Avg Invoice Price'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${avg_invoice_price}
 
   - measure: invoice_quantity_m
@@ -56,26 +56,26 @@
   - measure: max_invoice_price_m
     type: sum
     label: 'Max Invoice Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${max_invoice_price}
 
   - measure: min_invoice_price_m
     type: sum
     label: 'Min Invoice Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${min_invoice_price}
     
     
   - measure: savings_percentage_m
     type: sum
     label: 'Savings Percentage'
-    value_format: '0.00%'
-    sql: ${savings_percentage}
+    value_format: '0%'
+    sql: ${savings_percentage}/100
 
   - measure: spend_m
     type: sum
     label: 'Spend Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${spend}
 
   - measure: count

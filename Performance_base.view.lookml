@@ -34,40 +34,40 @@
   
   - measure: avg_annual_base_salary_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Avg Annual Base Salary'
     sql: ${avg_annual_base_salary}
 
   - measure: full_base_salary_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Full Base Salary'
-    sql: ${full_base_salary}/100
+    sql: ${full_base_salary}
 
   - measure: max_annual_base_salary_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Max Annual Base Salary'
-    sql: ${max_annual_base_salary}/10000
+    sql: ${max_annual_base_salary}
 
   - measure: media_annual_base_salary_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Media Annual Base Salary'
-    sql: ${media_annual_base_salary}/100
+    sql: ${media_annual_base_salary}
 
   - measure: min_annual_base_salary_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Min Annual Base Salary'
     sql: ${min_annual_base_salary}
 
 
   - measure: total_annual_base_salary_m
     type: sum
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     label: 'Total Annual Base Salary'
-    sql: ${total_annual_base_salary}/1000
+    sql: ${total_annual_base_salary}
   
 
 

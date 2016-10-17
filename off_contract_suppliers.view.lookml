@@ -24,7 +24,7 @@
   - measure: spend_amount_m
     type: sum
     label: 'Spend Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${spend_amount}
 
   

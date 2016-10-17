@@ -25,47 +25,64 @@
   - measure: contract_amount_bm
     type: sum
     label: 'Contract Amount'
-    value_format: '$#,##0.00'
-    sql: ${contract_amount_cb}
+    value_format: '$#,##0'
+    sql: ${contract_amount_cb}/30
 
   - measure: contract_percent_bm
     type: sum
     label: 'Contract Percent'
-    value_format: '0.00%'
-    sql: ${contract_percent_cb}/100
+    value_format: '0%'
+    sql: ${contract_percent_cb}/1000
 
   - measure: spend_amount_bm
     type: sum
     label: 'Spend Amount'
-    value_format: '$#,##0.00'
-    sql: ${spend_amount_cb}
+    value_format: '$#,##0'
+    sql: ${spend_amount_cb}/40
     
     
   - measure: Payables_Leakage_rate
     type: sum
     label: 'Payables Leakage Rate'
-    value_format: '0.00%'
-    sql: ${contract_percent_cb}/1000
+    value_format: '0%'
+    sql: ${contract_percent_cb}/3800
+    links:
+    - label: Spend Detail
+      url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
+    
+  
     
   - measure: Offconcrat_Spend_Percent
     type: sum
     label: 'Off Concrat Spend Percent'
-    value_format: '0.00%'
-    sql: ${contract_percent_cb}/1000*1.2
+    value_format: '0%'
+    sql: ${contract_percent_cb}/3000
+    links:
+    - label: Spend Detail
+      url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
+    
+  
     
     
   - measure: Contract_Leakage_Percentage
     type: sum
     label: 'Contract Leakage Percentage'
-    value_format: '0.00%'
-    sql: ${contract_percent_cb}/1000*1.3
+    value_format: '0%'
+    sql: ${contract_percent_cb}/9000
+    links:
+    - label: Spend Detail
+      url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
+    
+  
     
   - measure: Total_Business_Units
     type: sum
     label: 'Total Business Units'
     value_format: '0'
     sql: ${spend_amount_cb}/10000
-    
+    links:
+    - label: Spend Detail
+      url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
     
   
 

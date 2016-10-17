@@ -43,13 +43,13 @@
   - measure: expenses_m
     type: sum
     label: 'Expenses'
-    value_format: '$#,##0.00'
-    sql: ${expenses}*1000
+    value_format: '$#,##0'
+    sql: ${expenses}*100
 
   - measure: reports_submitted_m
     type: sum
     label: '# Of Reports Submitted'
-    sql: ${reports_submitted}
+    sql: ${reports_submitted}*2
   
 
   - measure: count

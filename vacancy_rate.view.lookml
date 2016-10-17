@@ -26,7 +26,7 @@
     #MEASURES
     
   - measure: employee_headcount_m
-    type: avg
+    type: sum
     label: 'Employee Headcount'
     value_format: '0'
     sql: ${employee_headcount}

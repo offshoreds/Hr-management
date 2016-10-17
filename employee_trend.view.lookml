@@ -29,8 +29,13 @@
     label: 'Voluntary Termination'
     type: sum
     value_format: '#,##0'
-    sql: ${voluntery}*10
-
+    sql: ${voluntery}
+    filters: 
+       year: '2016'
+       quarter: 'Q3'
+    
+    
+    
   - measure: employees_count
     label: 'Employees'
     value_format: '0'
@@ -41,7 +46,10 @@
     label: 'involuntary Termination'
     type: sum
     value_format: '#,##0'
-    sql: ${involuntary_termination}*10
+    sql: ${involuntary_termination}
+    filters: 
+       year: '2016'
+       quarter: 'Q3'
 
   - measure: count
     type: count

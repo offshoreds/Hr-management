@@ -28,8 +28,8 @@
   - measure: total_expenses_m
     label: 'Total Expenses'
     type: sum
-    value_format: '$#,##0.00'
-    sql: ${total_expenses}
+    value_format: '$#,##0'
+    sql: ${total_expenses}/700
 
   - measure: total_expenses_year_ago_m
     value_format: '$#,##0.00'

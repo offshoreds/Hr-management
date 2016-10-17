@@ -37,8 +37,8 @@
   - measure: Total_amount_spent_m
     type: sum
     label: 'Amount Spent'
-    value_format: '$#,##0.00'
-    sql: ${Total_amount_spent}
+    value_format: '$#,##0'
+    sql: ${Total_amount_spent}/100
   
   - measure: count
     type: count

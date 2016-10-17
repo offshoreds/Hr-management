@@ -18,3 +18,6 @@
 
 - explore: off_contract_suppliers
 
+- explore: spend_transactions
+
+

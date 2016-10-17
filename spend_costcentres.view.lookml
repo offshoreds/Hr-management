@@ -17,8 +17,8 @@
   - measure: spend_amount_csm
     type: sum
     label: 'Spend Amount'
-    value_format: '$#,##0.00'
-    sql: ${spend_amount_cs}
+    value_format: '$#,##0'
+    sql: ${spend_amount_cs}/70
   
 
   - measure: count

@@ -21,8 +21,8 @@
   - measure: contract_amount_ms
     type: sum
     label: 'Contract Amount'
-    value_format: '$#,##0.00'
-    sql: ${contract_amount_s}
+    value_format: '$#,##0'
+    sql: ${contract_amount_s}/900
 
   - measure: contract_percent_ms
     type: sum

@@ -24,10 +24,18 @@
     type: sum
     label: 'Amount Spent'
     value_format: '$0.##,, " M"'
-    sql: ${amount_spent}*5
+    sql: ${amount_spent}
     links:
     - label: Employee Expenses details
       url: /dashboards/39
+      
+      
+  - measure: amount_spent_mm
+    type: sum
+    label: 'Amount Spent'
+    value_format: '$#,###'
+    sql: ${amount_spent}/10
+   
     
   - measure: amount_spent_m_2015
     type: sum

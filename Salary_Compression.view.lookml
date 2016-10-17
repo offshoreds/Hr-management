@@ -48,17 +48,32 @@
   - measure: pay_yearly_amount_m
     type: sum
     label: 'Pay Yearly Amount'
-    value_format: '$#,##0.00'
-    sql: ${pay_yearly_amount}
+    value_format: '$#,##0'
+    sql: ${pay_yearly_amount}/200
+    
+  - measure: Training_Cost
+    type: sum
+    label: 'Training Cost Per FTE'
+    value_format: '$#,##0'
+    sql: ${pay_yearly_amount}/20000
+    
+  - measure: Cost_Per_Recruitment
+    type: sum
+    label: 'Cost Per Recruitment'
+    value_format: '$#,##0'
+    sql: ${median_annual_basesal}/300000
+    
+
+
     
     
   - measure: high_yearly_amount
     type: sum
     label: 'Highest Pay Yearly Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${pay_yearly_amount}/10
     filters: 
-        pay_grade_name: 'S1'
+        pay_grade_name: 'Senior Pilot Grade B1'
         
     links:
     - label: Employee Expenses details
@@ -68,10 +83,10 @@
   - measure: lowest_yearly_amount_m
     type: sum
     label: 'Lowest Pay Yearly Amount'
-    value_format: '$#,##0.00'
+    value_format: '$#,##0'
     sql: ${pay_yearly_amount}/10
     filters: 
-        pay_grade_name: 'AP5'
+        pay_grade_name: 'Supervisor  Grade A8'
     
     
     
