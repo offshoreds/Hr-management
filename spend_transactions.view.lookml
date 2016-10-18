@@ -60,6 +60,26 @@
     type: string
     hidden: true
     sql: ${TABLE}.CONTRACT_LEAKAGE
+    
+    
+  - dimension: i_amount
+    type: string
+    hidden: true
+    sql: ${TABLE}.I_AMOUNT
+    
+  
+  - dimension: c_s_amount
+    type: string
+    hidden: true
+    sql: ${TABLE}.C_S_AMOUNT
+
+
+
+    
+  - dimension: c_l_amount
+    type: string
+    hidden: true
+    sql: ${TABLE}.C_L_AMOUNT
 
 
 
@@ -70,7 +90,7 @@
     type: sum
     label: 'Invoice Amount'
     value_format: '$#,###'
-    sql: ${Invoiced_Amount}/10000
+    sql: ${i_amount}
 
 
 
@@ -86,7 +106,7 @@
     type: sum
     value_format: '$#,###'
     label: 'Contract Amount Spend'
-    sql: ${Invoiced_Amount}/10000*0.12
+    sql: ${c_s_amount}
     
   
   - measure: Off_Contract_Spend_m
@@ -101,7 +121,7 @@
     type: sum
     value_format: '$#,###'
     label: 'Contract Leakage Amount'
-    sql: ${Invoiced_Amount}/10000*0.05
+    sql: ${c_l_amount}
 
 
 

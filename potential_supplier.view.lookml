@@ -38,6 +38,11 @@
     type: string
     sql: ${TABLE}.SUPPLIER_NAME
     
+  - dimension: savings_p
+    type: string
+    sql: ${TABLE}.SAVINGS_P
+    
+    
     
   # measures
   
@@ -70,7 +75,7 @@
     type: sum
     label: 'Savings Percentage'
     value_format: '0%'
-    sql: ${savings_percentage}/100
+    sql: ${savings_p}
 
   - measure: spend_m
     type: sum

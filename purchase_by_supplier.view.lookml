@@ -11,6 +11,11 @@
     type: string
     sql: ${TABLE}.SUPLIER
     
+  
+  - dimension: Amount_Spend
+    type: string
+    sql: ${TABLE}.AMOUNT_SPEND
+    
   # measures 
   
   - measure: sup_amount_m
@@ -23,7 +28,7 @@
     label: 'Amount Spend'
     value_format: '$#,##0'
     type: sum
-    sql: ${sup_amount}/80.5000
+    sql: ${Amount_Spend}
 
 
 

@@ -4,11 +4,11 @@
   rows:
    
       
-    - elements: [Workforce_Effectiveness,Employee_Headcount,Employees_Termination,Employee_retirement]
+    - elements: [Workforce_Effectiveness,Employee_Headcount,Total_FTE,Continget_Employees]
       height: 210
       
   
-    - elements: [Recruitment,New_hires,Total_FTE,Employees_Turnover]
+    - elements: [Recruitment,New_hires,Employees_Termination,Employees_Turnover]
       height: 210  
       
   
@@ -16,7 +16,7 @@
     - elements: [Employee_Expenses,Total_Expenses,Payroll_Expenses,Highest_Salary]
       height: 210  
       
-    - elements: [Expenses_Time_period]
+    - elements: [Employee_Time_period]
       height: 330  
         
       
@@ -163,12 +163,13 @@
     comparison_label: Employees Termination Year 2015
     single_value_title: '# Employees Termination'
     
-  - name: Employee_retirement
+  - name: Continget_Employees
+    title: 'Continget Employees'
     type: single_value
     model: Human_Resource_Management
     explore: headcount
-    measures: [headcount.retirement_emp, headcount.Retirement_emp_2015]
-    sorts: [headcount.retirement_emp desc]
+    measures: [headcount.Employees_Sum, headcount.Employees_m]
+    sorts: [headcount.Employees_m desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
@@ -202,8 +203,9 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    single_value_title: '# Retirements'
-    comparison_label: Retirements Year 2015
+    comparison_label: '-  2015 Contingent Employees'
+    single_value_title: '# Continget Employees'
+
     
   
   - name: Recruitment
@@ -589,15 +591,15 @@
     comparison_label: Lowest Pay Salary
     
     
-  - name: Expenses_Time_period
-    title: 'Expenses Over Time Period'
+  - name: Employee_Time_period
+    title: 'Employee Headcount Over Time Period'
     type: looker_area
     model: Human_Resource_Management
     explore: headcount
     dimensions: [headcount.Year, headcount.Quarter]
-    measures: [headcount.Total_Emp]
+    measures: [headcount.Employees, headcount.Contingent_emp_m]
     filters:
-      headcount.Year: '2014,2015,2016'
+      headcount.Year: '2015,2016'
     sorts: [headcount.Year, headcount.Quarter]
     limit: '18'
     column_limit: '50'
@@ -611,18 +613,18 @@
     show_view_names: false
     limit_displayed_rows: false
     y_axis_combined: true
-    show_y_axis_labels: true
+    show_y_axis_labels: false
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-    show_x_axis_label: true
+    show_x_axis_label: false
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
     show_null_points: true
     point_style: none
     interpolation: linear
-    show_totals_labels: true
+    show_totals_labels: false
     show_silhouette: false
     totals_color: '#3c3a32'
     ordering: none
@@ -641,6 +643,3 @@
     colors: ['#fdbf6f', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f',
       '#ff7f00', '#cab2d6', '#6a3d9a', '#edbc0e', '#b15928']
     series_colors: {}
-    
-  
-    

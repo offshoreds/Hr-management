@@ -18,19 +18,29 @@
     type: string
     sql: ${TABLE}.YEAR
     
+    
+  - dimension: Reception_P
+    type: string
+    hidden: true
+    sql: ${TABLE}.RECEPTION_P
+
+  - dimension: Recept_A
+    type: string
+    sql: ${TABLE}.RECEPT_A
+    
     # measures
     
   - measure: amount_m
     type: sum
     label: 'Receipt Date Exception Amount'
     value_format: '$#,##0'
-    sql: ${amount}*1000
+    sql: ${Recept_A}
 
   - measure: percent_reception_m
     type: sum
     value_format: '#,##0%'
     label: 'Receipt Date Exception Percent'
-    sql: ${percent_reception}/100
+    sql: ${Reception_P}
 
   - measure: count
     type: count

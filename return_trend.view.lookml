@@ -18,6 +18,12 @@
     type: string
     sql: ${TABLE}.YEAR
     
+  - dimension: return_p
+    type: string
+    sql: ${TABLE}.RETURN_P
+    
+  # measures
+    
   - measure: return_amount_m
     type: sum
     value_format: '$#,##0'
@@ -28,7 +34,7 @@
     label: 'Return %'
     type: sum
     value_format: '0\%'
-    sql: ${return_percent}*1000
+    sql: ${return_p}
 
 
   - measure: count

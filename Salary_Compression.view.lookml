@@ -26,6 +26,24 @@
     type: string
     sql: ${TABLE}.PERCENT_MIDPOINT
     
+  - dimension: high_salary
+    type: string
+    sql: ${TABLE}.HIGH_SALARY
+    
+  - dimension: Training_Costs
+    type: string
+    sql: ${TABLE}.TRAINING_COST
+    
+    
+  - dimension: Cost_Recruitment
+    type: string
+    sql: ${TABLE}.COST_RECRUITMENT
+    
+  - dimension: Pay_Amount_Y
+    type: string
+    sql: ${TABLE}.PAY_AMOUNT_Y
+    
+    
     # measures
     
   - measure: avg_annual_basesal_m
@@ -49,19 +67,26 @@
     type: sum
     label: 'Pay Yearly Amount'
     value_format: '$#,##0'
-    sql: ${pay_yearly_amount}/200
+    sql: ${Pay_Amount_Y}
     
   - measure: Training_Cost
     type: sum
     label: 'Training Cost Per FTE'
     value_format: '$#,##0'
-    sql: ${pay_yearly_amount}/20000
+    sql: ${Training_Costs}
+    links:
+    - label: Expenses Details
+      url: /explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m
+    
     
   - measure: Cost_Per_Recruitment
     type: sum
     label: 'Cost Per Recruitment'
     value_format: '$#,##0'
-    sql: ${median_annual_basesal}/300000
+    sql: ${Cost_Recruitment}
+    links:
+    - label: Expenses Details
+      url: /explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m
     
 
 
@@ -71,7 +96,7 @@
     type: sum
     label: 'Highest Pay Yearly Amount'
     value_format: '$#,##0'
-    sql: ${pay_yearly_amount}/10
+    sql: ${high_salary}
     filters: 
         pay_grade_name: 'Senior Pilot Grade B1'
         
@@ -84,7 +109,7 @@
     type: sum
     label: 'Lowest Pay Yearly Amount'
     value_format: '$#,##0'
-    sql: ${pay_yearly_amount}/10
+    sql: ${high_salary}
     filters: 
         pay_grade_name: 'Supervisor  Grade A8'
     

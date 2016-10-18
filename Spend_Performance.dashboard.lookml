@@ -1,5 +1,5 @@
 - dashboard: spend_performance
-  title: Spend Performance
+  title: Spend By Supplier
   layout: grid
   rows:
     - elements: [Total_Business_Units,Off_Contract_Spend_Percent,Payable_Leakage_Rate,Contract_Leakage_Percent]
@@ -11,7 +11,7 @@
       height: 330
       
     - elements: [Suppliers_Spend_Details]
-      height: 330
+      height: 280
 
 
 
@@ -307,7 +307,7 @@
     limit: '5'
     column_limit: '50'
     query_timezone: America/Los_Angeles
-    value_labels: labels
+    value_labels: legend
     label_type: lab
     show_view_names: false
     stacking: ''

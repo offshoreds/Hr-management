@@ -14,13 +14,20 @@
     type: string
     sql: ${TABLE}.SUPPLIER
     
+  - dimension: Invoice_A
+    type: string
+    hidden: true
+    sql: ${TABLE}.INVOICE_a
+    
+    
+    
     # measures
     
   - measure: invoice_amount_m
     type: sum
     label: 'Invoice Price Variance Amount'
     value_format: '$0.##,, " M"'
-    sql: ${invoice_amount}*1000
+    sql: ${Invoice_A}
     
     
       

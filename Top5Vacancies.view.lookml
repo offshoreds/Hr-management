@@ -8,7 +8,13 @@
 
   - dimension: openings
     type: string
-    sql: ${TABLE}.OPENINGS
+    sql: ${TABLE}.OPENINGS 
+    
+  - dimension: Top_Openings
+    type: string
+    sql: ${TABLE}.TOP_OPENINGS
+    
+  
     
     
   # measures 
@@ -18,7 +24,7 @@
     label: 'Openings'
     type: sum
     value_format: '#,###'
-    sql: ${openings}*3
+    sql: ${Top_Openings}
     
   
 

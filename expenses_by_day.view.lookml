@@ -21,6 +21,7 @@
 
   - dimension: spent_d
     type: string
+    hidden: true
     sql: ${TABLE}.SPENT_D
     
   - dimension: month
@@ -36,6 +37,16 @@
     sql: ${TABLE}.QUARTER
     
     
+  - dimension: New_Expenses
+    type: string
+    hidden: true
+    sql: ${TABLE}.NEW_EXPENSES
+    
+  - dimension: New_Reports
+    type: string
+    hidden: true
+    sql: ${TABLE}.NEW_REPORTS
+    
     
   # MEASURES
   
@@ -44,12 +55,12 @@
     type: sum
     label: 'Expenses'
     value_format: '$#,##0'
-    sql: ${expenses}*100
+    sql: ${New_Expenses}
 
   - measure: reports_submitted_m
     type: sum
     label: '# Of Reports Submitted'
-    sql: ${reports_submitted}*2
+    sql: ${New_Reports}
   
 
   - measure: count

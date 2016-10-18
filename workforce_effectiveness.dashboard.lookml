@@ -2,63 +2,22 @@
   title: HR-Workforce Effectiveness
   layout: grid
   rows:
-    - elements: [Single_Value_Emp,Contingent_Employees_HeadCount,Supervisors]
+    - elements: [Single_Value_Emp,Contingent_Employees_HeadCount,Supervisors,Voluntary_Termination,Involuntary_Termination]
       height: 110
-    - elements: [Avg_employees,Voluntary_Termination,Involuntary_Termination]
-      height: 110  
-    - elements: [Employees_Headcount,Employees_Turnover]
-      height: 400
+    
+  
       
-    - elements: [Employee_Vs_SUpervisor,Average_employees]
-      height: 400
+    - elements: [Employees_By_Department,Employee_Trending]
+      height: 380
       
-    - elements: [Employees_trend,employee_expenses]
-      height: 350
+      
+    - elements: [Employee_Vs_SUpervisor,Employees_trend]
+      height: 380
 
 #  filters:
 
   elements:
-  - name: Employees_Headcount
-    title: 'Contingent And Permanent Employees'
-    type: looker_column
-    model: Human_Resource_Management
-    explore: headcount
-    dimensions: [headcount.Department_name]
-    measures: [headcount.Employees, headcount.Contingent_emp]
-    filters:
-      headcount.Department_name: DEPARTMENT~SHARE~USA,DEPARTMENT~SHARE~IND,DEPARTMENT~SHARE~DEU,DEPARTMENT~SHARE~BRZ,DEPARTMENT~SHARE~AUS,DEPARTMENT~SHARE~NLD,DEPARTMENT~SHARE~NON,DEPARTMENT~SHARE~NOR,DEPARTMENT~SHARE~NUS,DEPARTMENT~SHARE~OII,DEPARTMENT~SHARE~SEA,DEPARTMENT~SHARE~SWE
-    sorts: [headcount.Employees desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
-    series_types:
-      headcount.Emp_Turnover: line
-      headcount.Employees: line
+  
       
     
   - name: Single_Value_Emp
@@ -104,16 +63,16 @@
     point_style: circle
     interpolation: linear
     series_types: {}
-    single_value_title: '# Permanent Employees HeadCount'
+    single_value_title: '# Permanent Employees'
   
   
   - name: Contingent_Employees_HeadCount
-    title: '# Contingent Employees HeadCount'
+    title: '# Contingent Employees'
     type: single_value
-    explore: headcount
     model: Human_Resource_Management
-    measures: [headcount.Employees]
-    sorts: [headcount.Employees desc]
+    explore: headcount
+    measures: [headcount.Employees_Sum]
+    sorts: [headcount.Employees_Sum desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
@@ -149,60 +108,13 @@
     show_null_points: true
     point_style: circle
     interpolation: linear
-    series_types: {}
-    single_value_title: '# Contingent Employees HeadCount'
-    
-    
-  - name: Employees_Turnover
-    title: 'Employees and Turnover'
-    type: looker_column
-    model: Human_Resource_Management
-    explore: headcount
-    dimensions: [headcount.Department_name]
-    measures: [headcount.Employees, headcount.Emp_Turnover, headcount.Contingent_emp]
-    filters:
-      headcount.Department_name: DEPARTMENT~SHARE~USA,DEPARTMENT~SHARE~IND,DEPARTMENT~SHARE~DEU,DEPARTMENT~SHARE~BRZ,DEPARTMENT~SHARE~AUS,DEPARTMENT~SHARE~NLD,DEPARTMENT~SHARE~NON,DEPARTMENT~SHARE~NOR,DEPARTMENT~SHARE~NUS,DEPARTMENT~SHARE~OII,DEPARTMENT~SHARE~SEA,DEPARTMENT~SHARE~SWE
-    sorts: [headcount.Employees desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: false
-    show_y_axis_labels: false
-    show_y_axis_ticks: false
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
     series_types:
-      headcount.Emp_Turnover: line
       __FILE: HR_Management/workforce_effectiveness.dashboard.lookml
-      __LINE_NUM: 202
+      __LINE_NUM: 152
+    single_value_title: '# Contingent Employees'
 
+    
+    
   
   
   - name: Supervisors
@@ -248,47 +160,7 @@
     single_value_title: '# Supervisors'
  
   
-  - name: Avg_employees
-    title: '# Avg Employees Per Supervisor'
-    type: single_value
-    model: Human_Resource_Management
-    explore: supervisorreport
-    measures: [supervisorreport.Average_Emp]
-    sorts: [supervisorreport.Average_Emp desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    series_types: {}
-    single_value_title: '# Avg Employees Per Supervisor'
+
     
   
   - name: Employee_Vs_SUpervisor
@@ -298,6 +170,8 @@
     explore: supervisorreport
     dimensions: [supervisorreport.Department]
     measures: [supervisorreport.Supervisor_count, supervisorreport.Emp_count]
+    filters:
+      supervisorreport.Year: '2015,2016'
     sorts: [supervisorreport.Supervisor_count desc]
     limit: '12'
     column_limit: '50'
@@ -336,55 +210,12 @@
     show_comparison_label: true
     series_types:
       supervisorreport.Supervisor_count: line
+      __FILE: HR_Management/workforce_effectiveness.dashboard.lookml
+      __LINE_NUM: 336
+
       
   
-  - name: Average_employees
-    title: 'Average Employees'
-    type: looker_line
-    model: Human_Resource_Management
-    explore: supervisorreport
-    dimensions: [supervisorreport.Department]
-    measures: [supervisorreport.Supervisor_count, supervisorreport.Average_Emp]
-    sorts: [supervisorreport.Supervisor_count desc]
-    limit: '10'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: false
-    show_y_axis_labels: false
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    show_null_points: false
-    point_style: circle
-    interpolation: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    series_types:
-    __FILE: HR_Management/workforce_effectiveness.dashboard.lookml
-    __LINE_NUM: 384
-
+ 
    
   - name: Employees_trend
     title: 'Employees Trend'
@@ -392,10 +223,10 @@
     model: Human_Resource_Management
     explore: headcount
     dimensions: [headcount.Year, headcount.Quarter]
-    measures: [headcount.Contingent_emp, headcount.Employees, headcount.Total_Emp_termi_voluntary,
-      headcount.Total_Emp_termi_involuntary, headcount.retirement_emp]
+    measures: [headcount.Contingent_emp_m, headcount.Employees, headcount.Total_Emp_termi_voluntary,
+      headcount.Total_Emp_termi_involuntary]
     filters:
-      headcount.Year: '2014,2015,2016'
+      headcount.Year: '2015,2016'
     sorts: [headcount.Year, headcount.Quarter]
     limit: '500'
     column_limit: '50'
@@ -408,7 +239,7 @@
     y_axis_gridlines: true
     show_view_names: false
     limit_displayed_rows: false
-    y_axis_combined: true
+    y_axis_combined: false
     show_y_axis_labels: false
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -422,8 +253,8 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
-    show_null_points: true
-    point_style: none
+    show_null_points: false
+    point_style: circle
     interpolation: linear
     custom_color_enabled: false
     custom_color: forestgreen
@@ -438,6 +269,10 @@
     y_axis_reversed: false
     hidden_series: []
     column_group_spacing_ratio: 0.5
+    colors: ['#62bad4', '#a9c574', '#929292', '#1f3e5a', '#1f3e5a', '#90c8ae', '#92818d',
+      '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
+    series_colors: {}
+
 
   
   
@@ -525,18 +360,17 @@
     totals_color: '#808080'
     series_types: {}
     single_value_title: '# Involuntary Termination'
- 
-  
-  - name: employee_expenses
-    title: 'Employee Expenses'
+    
+  - name: Employees_By_Department
+    title: 'Employees By Department'
     type: looker_column
     model: Human_Resource_Management
-    explore: payroll
-    dimensions: [payroll.year, payroll.quarter]
-    measures: [payroll.payroll, payroll.support, payroll.overtime]
+    explore: headcount
+    dimensions: [headcount.Department_name]
+    measures: [headcount.Employees, headcount.Contingent_emp_m]
     filters:
-      payroll.year: '2014,2015,2016'
-    sorts: [payroll.year, payroll.quarter]
+      headcount.Year: '2015,2016'
+    sorts: [headcount.Employees desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
@@ -555,7 +389,7 @@
     y_axis_tick_density_custom: 5
     show_x_axis_label: true
     show_x_axis_ticks: true
-    x_axis_scale: ordinal
+    x_axis_scale: auto
     y_axis_scale_mode: linear
     ordering: none
     show_null_labels: false
@@ -563,12 +397,56 @@
     show_silhouette: false
     totals_color: '#808080'
     show_null_points: true
-    point_style: none
+    point_style: circle
     interpolation: linear
-    value_labels: legend
-    label_type: labPer
     series_types: {}
-    column_group_spacing_ratio: 0.5
+    
+  - name: Employee_Trending
+    title: 'Employees Trending'
+    type: looker_line
+    model: Human_Resource_Management
+    explore: headcount
+    dimensions: [headcount.Year, headcount.Quarter]
+    measures: [headcount.Employees, headcount.Contingent_emp_m]
+    dynamic_fields:
+    - table_calculation: yearquarter
+      label: YearQuarter
+      expression: concat(${headcount.Year},"-",${headcount.Quarter})
+    filters:
+      headcount.Year: '2015,2016'
+    sorts: [headcount.Year]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    show_null_points: true
+    point_style: circle
+    interpolation: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+    hidden_fields: [headcount.Quarter, headcount.Year]
+
 
  
+  
  

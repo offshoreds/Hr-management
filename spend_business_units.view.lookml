@@ -23,19 +23,27 @@
     type: string
     sql: ${TABLE}.YEAR
     
+  - dimension: spend_p
+    type: string
+    sql: ${TABLE}.SPEND_P
+
+  - dimension: spend_a
+    type: string
+    sql: ${TABLE}.SPEND_A
+    
   # measures
   
   - measure: spend_amount_mb
     type: sum
     label: 'Spend Amount'
     value_format: '$#,##0'
-    sql: ${spend_amount_bs}/100
+    sql: ${spend_a}
 
   - measure: spend_percent_mb
     type: sum
     label: 'Spend Percent'
     value_format: '0%'
-    sql: ${spend_percent_bs}/70
+    sql: ${spend_p}
   
   
 

@@ -1,15 +1,18 @@
 - dashboard: sepnd_analytics
-  title: Sepnd Analytics
+  title: Spend Analyzer
   layout: grid
   rows:
     - elements: [Total_Amount_Spend,Active_Suppliers,Contracted,Invoices]
       height: 120
       
     - elements: [Spend_By_State,Business_Units]
-      height: 330
+      height: 350
       
     - elements: [Top_10_Categories,Top_10_Suppliers]
-      height: 330
+      height: 350
+      
+    - elements: [Spend_Transactions]
+      height: 380 
   
   
   
@@ -181,37 +184,20 @@
   
   
   - name: Spend_By_State
+    title: 'Spend By State'
     type: looker_geo_choropleth
-    model: c2c_model
-    explore: camp_hdr
-    dimensions: [opty_hdr1.state]
-    measures: [opty_hdr1.Amount_Spend_s]
-    sorts: [opty_hdr1.Amount_Spend_s desc]
+    model: Spend_Analytics
+    explore: spend_state
+    dimensions: [spend_state.state]
+    measures: [spend_state.total_spend_amount]
+    sorts: [spend_state.total_spend_amount desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
     map: usa
     map_projection: ''
-    show_view_names: false
+    show_view_names: true
     quantize_colors: false
-    map_plot_mode: points
-    heatmap_gridlines: false
-    heatmap_opacity: 0.5
-    show_region_field: true
-    draw_map_labels_above_data: true
-    map_tile_provider: positron
-    map_position: fit_data
-    map_scale_indicator: 'off'
-    map_pannable: true
-    map_zoomable: true
-    map_marker_type: circle
-    map_marker_icon_name: default
-    map_marker_radius_mode: proportional_value
-    map_marker_units: meters
-    map_marker_proportional_scale_type: linear
-    map_marker_color_mode: fixed
-    show_legend: true
-    quantize_map_value_colors: false
     stacking: ''
     show_value_labels: false
     label_density: 25
@@ -234,6 +220,7 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
+
     
   - name: Business_Units
     type: looker_pie
@@ -247,7 +234,7 @@
     limit: '5'
     column_limit: '50'
     query_timezone: America/Los_Angeles
-    value_labels: labels
+    value_labels: legend
     label_type: lab
     show_view_names: false
     show_value_labels: true
@@ -354,4 +341,49 @@
     colors: ['#a9c574', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
       '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
     series_colors: {}
+    
+    
+    
+  - name: Spend_Transactions
+    title: 'Spend Transactions'
+    type: table
+    model: Spend_Analytics
+    explore: spend_transactions
+    dimensions: [spend_transactions.Invoice_Date, spend_transactions.Invoice_Number,
+      spend_transactions.Invoice_Type, spend_transactions.Item_Description, spend_transactions.Supplier_Name]
+    measures: [spend_transactions.Invoiced_Amount_m, spend_transactions.Invoiced_Quantity_m,
+      spend_transactions.Contract_Spend_m, spend_transactions.Contract_Leakage_m]
+    sorts: [spend_transactions.Invoiced_Amount_m desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    show_view_names: false
+    show_row_numbers: false
+    truncate_column_names: false
+    hide_totals: false
+    hide_row_totals: false
+    table_theme: editable
+    limit_displayed_rows: false
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    series_types: {}
+
 

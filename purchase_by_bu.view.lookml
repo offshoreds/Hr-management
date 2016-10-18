@@ -12,13 +12,19 @@
     label: 'Business Unit'
     sql: ${TABLE}.BUSINESS_UNIT
     
+  - dimension: purchase_a
+    type: string
+    sql: ${TABLE}.PURCHASE_A
+    
+    
+    
     # measures 
     
   - measure: amount_m
     label: 'Non-Negotiated Purchase Amount'
     value_format: '$#,##0'
     type: sum
-    sql: ${bu_amount}*1000
+    sql: ${purchase_a}
 
 
   - measure: count

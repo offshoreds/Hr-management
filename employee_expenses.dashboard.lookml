@@ -3,15 +3,15 @@
   layout: grid
   rows:
   
-    - elements: [Total_Salary,Average_Salary,Expenses_By_Categories]
+    - elements: [Total_Salary,Training_cost,Cost_Recruitment]
       height:  100
 
       
     - elements: [Top_Pay_Grades,Top_Cost_Centers,Top_Spenders]
-      height: 280
+      height: 300
     
       
-    - elements: [Expenses_By_Time_period,Recent_Employee,Expenses_Report_Submission_By_Quarter]
+    - elements: [Expenses_Report_Submission_By_Quarter,Recent_Employee]
       height: 330
       
 
@@ -26,13 +26,14 @@
 
   elements:
   
-  - name: Expenses_By_Categories
+  - name: Cost_Recruitment
+    title: 'Cost Per Recruitment'
     type: single_value
     model: Human_Resource_Management
-    explore: expenses_category
-    measures: [expenses_category.expense_amount_m]
-    sorts: [expenses_category.expense_amount_m desc]
-    limit: '10'
+    explore: salary_compression
+    measures: [salary_compression.Cost_Per_Recruitment]
+    sorts: [salary_compression.Cost_Per_Recruitment desc]
+    limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
     custom_color_enabled: false
@@ -43,18 +44,18 @@
     comparison_reverse_colors: false
     show_comparison_label: true
     stacking: ''
-    show_value_labels: true
+    show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: false
+    show_view_names: true
     limit_displayed_rows: false
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
-    y_axis_tick_density: custom
-    y_axis_tick_density_custom: '2'
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
     show_x_axis_label: true
     show_x_axis_ticks: true
     x_axis_scale: auto
@@ -64,35 +65,8 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
-    show_row_numbers: true
-    truncate_column_names: false
-    hide_totals: false
-    hide_row_totals: false
-    table_theme: editable
-    value_labels: legend
-    label_type: labPer
-    map_plot_mode: points
-    heatmap_gridlines: false
-    heatmap_opacity: 0.5
-    show_region_field: true
-    draw_map_labels_above_data: true
-    map_tile_provider: positron
-    map_position: fit_data
-    map_scale_indicator: 'off'
-    map_pannable: true
-    map_zoomable: true
-    map_marker_type: circle
-    map_marker_icon_name: default
-    map_marker_radius_mode: proportional_value
-    map_marker_units: meters
-    map_marker_proportional_scale_type: linear
-    map_marker_color_mode: fixed
-    show_legend: true
-    quantize_map_value_colors: false
     series_types: {}
+
   
  
   
@@ -153,12 +127,13 @@
   
   
     
-  - name: Average_Salary
+  - name: Training_cost
+    title:  'Training Cost Per FTE'
     type: single_value
     model: Human_Resource_Management
-    explore: threeyears_saltrend
-    measures: [threeyears_saltrend.average_annual_base_salary_m]
-    sorts: [threeyears_saltrend.average_annual_base_salary_m desc]
+    explore: salary_compression
+    measures: [salary_compression.Training_Cost]
+    sorts: [salary_compression.Training_Cost desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
@@ -168,18 +143,18 @@
     show_comparison: false
     comparison_type: value
     comparison_reverse_colors: false
-    show_comparison_label: false
+    show_comparison_label: true
     stacking: ''
     show_value_labels: false
-    label_density: '25'
+    label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: false
+    show_view_names: true
     limit_displayed_rows: false
-    y_axis_combined: false
-    show_y_axis_labels: false
-    show_y_axis_ticks: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
     show_x_axis_label: true
@@ -191,20 +166,8 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
-    show_null_points: true
-    point_style: circle
-    interpolation: linear
-    show_row_numbers: true
-    truncate_column_names: false
-    hide_totals: false
-    hide_row_totals: false
-    table_theme: editable
-    series_types:
-      __FILE: HR_Management/employee_expenses.dashboard.lookml
-      __LINE_NUM: 236
-    column_group_spacing_ratio: 0.5
-    label_rotation:
-    show_dropoff: false
+    series_types: {}
+
     
     
     
@@ -229,9 +192,8 @@
     model: Human_Resource_Management
     explore: performance_base
     dimensions: [performance_base.performance_brand]
-    measures: [performance_base.avg_annual_base_salary_m, performance_base.full_base_salary_m,
-      performance_base.max_annual_base_salary_m, performance_base.media_annual_base_salary_m,
-      performance_base.min_annual_base_salary_m, performance_base.total_annual_base_salary_m]
+    measures: [performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m, performance_base.full_base_salary_m,
+      performance_base.max_annual_base_salary_m, performance_base.min_annual_base_salary_m]
     sorts: [performance_base.min_annual_base_salary_m desc]
     limit: '500'
     column_limit: '50'
@@ -268,8 +230,8 @@
  
     
   - name: Top_Spenders
-    title: 'Top Spenders'
-    type: looker_pie
+    title: 'Top 5 Spenders'
+    type: looker_bar
     model: Human_Resource_Management
     explore: top_spenders
     dimensions: [top_spenders.employee_name]
@@ -278,85 +240,43 @@
     limit: '5'
     column_limit: '50'
     query_timezone: America/Los_Angeles
-    value_labels: legend
-    label_type: per
+    stacking: ''
+    show_value_labels: true
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
     show_view_names: false
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: false
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: '#808080'
+    value_labels: legend
+    label_type: lab
     show_row_numbers: true
     truncate_column_names: false
     hide_totals: false
     hide_row_totals: false
     table_theme: editable
-    limit_displayed_rows: false
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
     show_null_points: true
     point_style: circle
     interpolation: linear
     series_types: {}
-    inner_radius: 30
+    inner_radius: 50
+
     
-  - name: Expenses_By_Time_period
-    title: 'Expenses By Time Period'
-    type: looker_area
-    model: Human_Resource_Management
-    explore: expenses_by_time_period
-    dimensions: [expenses_by_time_period.year, expenses_by_time_period.quarter]
-    measures: [expenses_by_time_period.amount_spent_m]
-    filters:
-       expenses_by_time_period.year: '2014,2015,2016'
-    sorts: [expenses_by_time_period.year, expenses_by_time_period.quarter]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/Los_Angeles
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    show_null_points: true
-    point_style: none
-    interpolation: linear
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: '#808080'
-    value_labels: legend
-    label_type: labPer
-    ordering: none
-    show_null_labels: false
-    series_types:
-      __FILE: HR_Management/employee_expenses.dashboard.lookml
-      __LINE_NUM: 322
-  
+ 
   
   
   - name: Recent_Employee
@@ -410,7 +330,7 @@
     dimensions: [expenses_by_day.Year, expenses_by_day.Quarter]
     measures: [expenses_by_day.expenses_m, expenses_by_day.reports_submitted_m]
     filters:
-      expenses_by_day.Year: -NULL
+      expenses_by_day.Year: 2015,2016,-NULL
     sorts: [expenses_by_day.Year, expenses_by_day.Quarter]
     limit: '500'
     column_limit: '50'
@@ -444,12 +364,13 @@
       expenses_by_day.reports_submitted_m: line
       expenses_by_day.expenses_m: area
       __FILE: HR_Management/employee_expenses.dashboard.lookml
-      __LINE_NUM: 637
+      __LINE_NUM: 444
+    
       
       
       
   - name: Top_Cost_Centers
-    title: 'Top Cost Centers'
+    title: 'Top 5 Cost Centers'
     type: looker_pie
     model: Human_Resource_Management
     explore: top_cost_centers
@@ -484,11 +405,11 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    inner_radius: 30
+    inner_radius: 50
   
   - name: Top_Pay_Grades
     title: 'Top Pay Grades'
-    type: looker_pie
+    type: looker_bar
     model: Human_Resource_Management
     explore: salary_compression
     dimensions: [salary_compression.pay_grade_name]
@@ -497,23 +418,20 @@
     limit: '5'
     column_limit: '50'
     query_timezone: America/Los_Angeles
-    value_labels: legend
-    label_type: per
-    show_view_names: false
-    show_value_labels: false
-    font_size: 12
     stacking: ''
+    show_value_labels: true
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
+    show_view_names: false
     limit_displayed_rows: false
     y_axis_combined: true
-    show_y_axis_labels: true
+    show_y_axis_labels: false
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-    show_x_axis_label: true
+    show_x_axis_label: false
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
@@ -522,6 +440,9 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: '#808080'
+    value_labels: legend
+    label_type: per
+    font_size: 12
     series_types: {}
     inner_radius: 30
 

@@ -15,6 +15,31 @@
     type: string
     sql: ${TABLE}.CATEGORY
     
+    
+  - dimension: total_Spend
+    type: string
+    sql: ${TABLE}.TOTAL_SPEND
+
+  - dimension: invoices
+    type: string
+    sql: ${TABLE}.INVOICES
+    
+  - dimension: exc_amount
+    type: string
+    sql: ${TABLE}.EXC_AMOUNT
+    
+  - dimension: contracted
+    type: string
+    sql: ${TABLE}.CONTRACTED
+
+  - dimension: Cat_Amount
+    type: string
+    sql: ${TABLE}.CAT_AMOUNT
+    
+  - dimension: act_suppliers
+    type: string
+    sql: ${TABLE}.ACT_SUPPLIERS
+    
     # measures
     
     
@@ -22,13 +47,13 @@
     label: 'Exception Amount'
     type: sum
     value_format: '$#,##0'
-    sql: ${exception_amount}/10000
+    sql: ${exc_amount}
     
   - measure: exception_amount_m_ss
     label: 'Total Amount Spend'
     type: sum
     value_format: '$0.##,, " M"'
-    sql: ${exception_amount}/1000
+    sql: ${total_Spend}
     links:
     - label: Spend Detail Report
       url: /explore/Spend_Analytics/spend_transactions?fields=spend_transactions.Invoice_Date,spend_transactions.Invoice_Type,spend_transactions.Invoiced_Quantity_m,spend_transactions.Invoiced_Amount_m
@@ -38,7 +63,7 @@
     label: 'Active Suppliers'
     type: sum
     value_format: '#,##0'
-    sql: ${exception_amount}/40000.5000
+    sql: ${act_suppliers}
     links:
     - label: Suppliers Detail Report
       url: /explore/Spend_Analytics/spend_transactions?fields=spend_transactions.Supplier_Name,spend_transactions.Invoiced_Quantity_m,spend_transactions.Invoiced_Amount_m
@@ -47,7 +72,7 @@
     label: 'Contracted'
     type: sum
     value_format: '0%'
-    sql: ${exception_amount}/90000000000.5000
+    sql: ${contracted}
     links:
     - label: Contracted Detail Report
       url: /explore/Spend_Analytics/spend_transactions?fields=spend_transactions.Supplier_Name,spend_transactions.Contract_Spend_m,spend_transactions.Off_Contract_Spend_m,spend_transactions.Contract_Leakage_m
@@ -57,7 +82,7 @@
     label: 'Invoices'
     type: sum
     value_format: '#,##0'
-    sql: ${exception_amount}/70000.5000
+    sql: ${invoices}
     links:
     - label: Invoices Detail Report
       url: /explore/Spend_Analytics/spend_transactions?fields=spend_transactions.Invoice_Date,spend_transactions.Invoice_Type,spend_transactions.Invoiced_Quantity_m,spend_transactions.Invoiced_Amount_m
@@ -67,7 +92,7 @@
     label: 'Category Amount'
     type: sum
     value_format: '$#,##0'
-    sql: ${exception_amount}/80000
+    sql: ${Cat_Amount}
 
   - measure: count
     type: count

@@ -19,6 +19,10 @@
     type: string
     sql: ${TABLE}.BUSINESS_UNIT
     
+  - dimension: Amount_Spend
+    type: string
+    sql: ${TABLE}.AMOUNT_SPEND
+    
   # measures 
   
   - measure: amount_m
@@ -31,7 +35,7 @@
     type: sum
     value_format: '$#,##0'
     label: 'Amount Spend'
-    sql: ${amount}/8.5
+    sql: ${Amount_Spend}
   
   
 

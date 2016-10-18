@@ -10,6 +10,11 @@
     type: string
     sql: ${TABLE}.SPEND_AMOUNT
     
+  - dimension: s_amount
+    type: string
+    sql: ${TABLE}.S_AMOUNT
+    
+    
     
   # measures
   
@@ -18,7 +23,7 @@
     type: sum
     label: 'Spend Amount'
     value_format: '$#,##0'
-    sql: ${spend_amount_cs}/70
+    sql: ${s_amount}
   
 
   - measure: count

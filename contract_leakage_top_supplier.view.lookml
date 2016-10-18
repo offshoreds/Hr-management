@@ -15,6 +15,10 @@
     type: string
     sql: ${TABLE}.SUUPLIERS
     
+  - dimension: C_Amount
+    type: string
+    sql: ${TABLE}.C_AMOUNT
+    
     
   # measures
   
@@ -22,7 +26,7 @@
     type: sum
     label: 'Contract Amount'
     value_format: '$#,##0'
-    sql: ${contract_amount_s}/900
+    sql: ${C_Amount}
 
   - measure: contract_percent_ms
     type: sum

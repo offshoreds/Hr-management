@@ -12,6 +12,15 @@
     type: string
     sql: ${TABLE}.CONTINGENT_HEAD_COUNT
     
+  - dimension: Total_Head_Count
+    type: string
+    sql: ${TABLE}.TOTAL_HEAD_COUNT
+    
+  - dimension: turnover_percent
+    type: string
+    sql: ${TABLE}.turnover_percent
+  
+    
   
   - dimension: INVOL_TERM
     type: string
@@ -20,6 +29,15 @@
   - dimension: VOL_TERM
     type: string
     sql: ${TABLE}.VOL_TERM 
+  
+    
+  - dimension: I_TERM
+    type: string
+    sql: ${TABLE}.I_TERM
+   
+  - dimension: V_TERM
+    type: string
+    sql: ${TABLE}.V_TERM 
    
    
   - dimension: TERMINATION
@@ -56,9 +74,10 @@
     filters: 
         Year: '2016'
         Quarter: 'Q3'
-    links:
-    - label: Recruitment Details
-      url: /dashboards/40
+    links: 
+    - label: Workforce Effectiveness Details
+      url: /dashboards/41
+    
       
   - measure: Contingent_emp_m
     label: 'Permanent Employees'
@@ -76,25 +95,25 @@
         Year: '2015'
         Quarter: 'Q4'
         
-  - measure: retirement_emp
-    label: ' Current year Retirement Employees'
-    type: sum
-    value_format: '#,##0'
-    sql: ${Contingent_head_count}/100
-    filters: 
-        Year: '2016' 
+##  - measure: retirement_emp
+  ##  label: ' Current year Retirement Employees'
+  ##  type: sum
+  ##  value_format: '#,##0'
+ ##   sql: ${Contingent_head_count}/100
+ ##   filters: 
+  ##      Year: '2016' 
     links: 
-    - label: Workforce Effectiveness Details
-      url: /dashboards/41
+ ##   - label: Workforce Effectiveness Details
+ ##     url: /dashboards/41
     
         
-  - measure: Retirement_emp_2015
-    label: ' Previous year Retirement Employees'
-    type: sum
-    value_format: '#,##0'
-    sql: ${Contingent_head_count}/100
-    filters: 
-        Year: '2015'
+#  - measure: Retirement_emp_2015
+ #   label: ' Previous year Retirement Employees'
+  #  type: sum
+   # value_format: '#,##0'
+    # sql: ${Contingent_head_count}/100
+  #  filters: 
+   #     Year: '2015'
   
   - measure: Employees
     label: 'Contingent Employees'
@@ -112,6 +131,11 @@
     filters: 
         Year: '2016'
         Quarter: 'Q3'
+        
+    links: 
+    - label: Workforce Effectiveness Details
+      url: /dashboards/41
+    
      
      
         
@@ -128,7 +152,7 @@
     label: 'Current Year Turnover '
     type: sum
     value_format: '0\%'
-    sql: ${Turnover}/51
+    sql: ${turnover_percent}
     filters: 
         Year: '2016'
         Quarter: 'Q3'
@@ -141,7 +165,7 @@
     label: 'Previous Year Employees Turnover'
     value_format: '0.##\%'
     type: sum
-    sql: ${Turnover}/59
+    sql: ${turnover_percent}
     filters: 
         Year: '2015'
         Quarter: 'Q4'
@@ -155,7 +179,7 @@
     label: 'Previous Year Employees'
     type: sum
     value_format: '#,##0'
-    sql:  ${Contingent_head_count}+${Emp_headcount}
+    sql:  ${Total_Head_Count}
     filters: 
         Year: '2015'
         Quarter: 'Q4'
@@ -165,7 +189,7 @@
     label: 'Current Employees'
     type: sum
     value_format: '#,##0'
-    sql:  ${Contingent_head_count}+${Emp_headcount}
+    sql:  ${Total_Head_Count}
     filters: 
         Year: '2016'
         Quarter: 'Q3'
@@ -189,17 +213,17 @@
     sql:  ${TERMINATION}
     filters: 
         Year: '2016'
-       
-    links: 
-    - label: Workforce Effectiveness Details
-      url: /dashboards/41
+    links:
+    - label: Recruitment Details
+      url: /dashboards/40   
+   
         
         
   - measure: Total_Emp_termi_voluntary
     label: 'Voluntary Employees Termination'
     type: sum
     value_format: '#,##0'
-    sql:  ${Contingent_head_count}/2+${Emp_headcount}/500-(${Contingent_head_count}/2+${Emp_headcount}/500)/200
+    sql:  ${V_TERM}
     filters: 
         Year: '2014,2015,2016'
         
@@ -207,29 +231,29 @@
     label: 'Involuntary Employees Termination'
     type: sum
     value_format: '#,##0'
-    sql:  (${Contingent_head_count}/2+${Emp_headcount}/500)/200
+    sql:  ${I_TERM}
     filters: 
         Year: '2014,2015,2016'
         
         
     
-  - measure: vacancy_rate
-    label: 'Vacancy Rate'
-    type: sum
-    value_format: '#.00%'
-    sql: (${Contingent_head_count}+${Emp_headcount}-${Contingent_head_count}/2+${Emp_headcount}/500)/1000000
-    filters: 
-        Year: '2014,2015,2016'
+#  - measure: vacancy_rate
+ #   label: 'Vacancy Rate'
+  #  type: sum
+  #  value_format: '#.00%'
+   # sql: (${Contingent_head_count}+${Emp_headcount}-${Contingent_head_count}/2+${Emp_headcount}/500)/1000000
+    #filters: 
+     #   Year: '2014,2015,2016'
         
         
         
-  - measure: vacancy_rate_2015
-    label: 'Vacancy Rate 2015'
-    type: sum
-    value_format: '#.00%'
-    sql: (${Contingent_head_count}+${Emp_headcount}-${Contingent_head_count}/2+${Emp_headcount}/500)/1000000
-    filters: 
-        Year: '2015'
+#  - measure: vacancy_rate_2015
+#    label: 'Vacancy Rate 2015'
+#    type: sum
+#    value_format: '#.00%'
+#    sql: (${Contingent_head_count}+${Emp_headcount}-${Contingent_head_count}/2+${Emp_headcount}/500)/1000000
+#    filters: 
+#        Year: '2015'
   
   
   - measure: Total_Emp_2015_termi

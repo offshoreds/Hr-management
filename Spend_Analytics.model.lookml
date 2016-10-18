@@ -20,4 +20,6 @@
 
 - explore: spend_transactions
 
+- explore: spend_state
+
 

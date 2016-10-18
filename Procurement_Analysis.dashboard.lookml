@@ -111,7 +111,7 @@
     series_colors:
       __FILE: HR_Management/Procurement_Analysis.dashboard.lookml
       __LINE_NUM: 243
-    value_format: $0.##,, " bn"
+    value_format: $0.##,, " M"
     single_value_title: Total Return Amount
 
 
@@ -422,6 +422,7 @@
     totals_color: '#808080'
     font_size: 12
     series_types: {}
+    inner_radius: 50
     
   - name: Top_10_Invoice_Price_Variance_by_Supplier
     title: 'Top 10 Invoice Price Variance By Supplier'

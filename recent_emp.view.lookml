@@ -28,8 +28,11 @@
   - dimension: spent_date
     type: string
     label: 'Spent Date '
-    
     sql: ${TABLE}.SPENT_DATE
+    
+  - dimension: Total_Spent
+    type: string
+    sql: ${TABLE}.TOTAL_SPENT
 
   
   # measures
@@ -38,7 +41,7 @@
     type: sum
     label: 'Amount Spent'
     value_format: '$#,##0'
-    sql: ${Total_amount_spent}/100
+    sql: ${Total_Spent}
   
   - measure: count
     type: count

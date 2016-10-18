@@ -19,6 +19,44 @@
     sql: ${TABLE}.SPEND_AMOUNT
     
     
+  - dimension: total_bu
+    type: string
+    hidden: true
+    sql: ${TABLE}.TOTAL_BU
+
+  - dimension: c_amount
+    hidden: true
+    type: string
+    sql: ${TABLE}.C_AMOUNT
+
+  - dimension: c_l_amount
+    type: string
+    hidden: true
+    sql: ${TABLE}.C_L_AMOUNT
+
+  - dimension: c_percent
+    type: string
+    hidden: true
+    sql: ${TABLE}.C_PERCENT
+    
+  - dimension: offcontract_percent
+    type: string
+    hidden: true
+    sql: ${TABLE}.OFFCONTRACT_PERCENT
+
+  - dimension: p_l_rate
+    type: string
+    hidden: true
+    sql: ${TABLE}.P_L_RATE
+
+  - dimension: s_amount
+    type: string
+    hidden: true
+    sql: ${TABLE}.S_AMOUNT
+
+  
+    
+    
   # measures
   
   
@@ -26,26 +64,26 @@
     type: sum
     label: 'Contract Amount'
     value_format: '$#,##0'
-    sql: ${contract_amount_cb}/30
+    sql: ${c_amount}
 
   - measure: contract_percent_bm
     type: sum
     label: 'Contract Percent'
     value_format: '0%'
-    sql: ${contract_percent_cb}/1000
+    sql: ${c_percent}
 
   - measure: spend_amount_bm
     type: sum
     label: 'Spend Amount'
     value_format: '$#,##0'
-    sql: ${spend_amount_cb}/40
+    sql: ${s_amount}
     
     
   - measure: Payables_Leakage_rate
     type: sum
     label: 'Payables Leakage Rate'
     value_format: '0%'
-    sql: ${contract_percent_cb}/3800
+    sql: ${p_l_rate}
     links:
     - label: Spend Detail
       url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
@@ -56,7 +94,7 @@
     type: sum
     label: 'Off Concrat Spend Percent'
     value_format: '0%'
-    sql: ${contract_percent_cb}/3000
+    sql: ${offcontract_percent}
     links:
     - label: Spend Detail
       url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
@@ -68,7 +106,7 @@
     type: sum
     label: 'Contract Leakage Percentage'
     value_format: '0%'
-    sql: ${contract_percent_cb}/9000
+    sql: ${c_l_amount}
     links:
     - label: Spend Detail
       url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
@@ -79,7 +117,7 @@
     type: sum
     label: 'Total Business Units'
     value_format: '0'
-    sql: ${spend_amount_cb}/10000
+    sql: ${total_bu}
     links:
     - label: Spend Detail
       url: /explore/Spend_Analytics/potential_supplier?fields=potential_supplier.supplier_name,potential_supplier.spend_m,potential_supplier.savings_percentage_m,potential_supplier.min_invoice_price_m,potential_supplier.max_invoice_price_m,potential_supplier.invoice_quantity_m,potential_supplier.avg_invoice_price_m
