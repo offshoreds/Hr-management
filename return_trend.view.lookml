@@ -22,13 +22,25 @@
     type: string
     sql: ${TABLE}.RETURN_P
     
+  - dimension: returns
+    type: string
+    hidden: true
+    sql: ${TABLE}.RETURNS
+    
   # measures
     
   - measure: return_amount_m
     type: sum
     value_format: '$#,##0'
     label: 'Return Amount'
+    hidden: true
     sql: ${return_amount}
+    
+  - measure: return_a
+    type: sum
+    value_format: '$#,##0'
+    label: 'Return Amount'
+    sql: ${returns}
     
   - measure: return_percent_m
     label: 'Return %'

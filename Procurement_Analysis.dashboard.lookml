@@ -69,10 +69,10 @@
     type: single_value
     model: Procurement
     explore: return_trend
-    measures: [return_trend.return_amount_m]
+    measures: [return_trend.return_a]
     filters:
       return_trend.year: '2014,2015,2016'
-    sorts: [return_trend.return_amount_m desc]
+    sorts: [return_trend.return_a desc]
     limit: '500'
     column_limit: '50'
     query_timezone: America/Los_Angeles
