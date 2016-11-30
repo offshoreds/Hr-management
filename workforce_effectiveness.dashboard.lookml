@@ -4,22 +4,22 @@
   rows:
     - elements: [Single_Value_Emp,Contingent_Employees_HeadCount,Supervisors,Voluntary_Termination,Involuntary_Termination]
       height: 110
-    
-  
-      
+
+
+
     - elements: [Employees_By_Department,Employee_Trending]
       height: 380
-      
-      
+
+
     - elements: [Employee_Vs_SUpervisor,Employees_trend]
       height: 380
 
 #  filters:
 
   elements:
-  
-      
-    
+
+
+
   - name: Single_Value_Emp
     title: 'Employees HeadCount'
     type: single_value
@@ -64,8 +64,8 @@
     interpolation: linear
     series_types: {}
     single_value_title: '# Permanent Employees'
-  
-  
+
+
   - name: Contingent_Employees_HeadCount
     title: '# Contingent Employees'
     type: single_value
@@ -113,10 +113,10 @@
       __LINE_NUM: 152
     single_value_title: '# Contingent Employees'
 
-    
-    
-  
-  
+
+
+
+
   - name: Supervisors
     title: '# Supervisors'
     type: single_value
@@ -158,11 +158,11 @@
     totals_color: '#808080'
     series_types: {}
     single_value_title: '# Supervisors'
- 
-  
 
-    
-  
+
+
+
+
   - name: Employee_Vs_SUpervisor
     title: 'Supervisor Span of Control'
     type: looker_column
@@ -213,10 +213,10 @@
       __FILE: HR_Management/workforce_effectiveness.dashboard.lookml
       __LINE_NUM: 336
 
-      
-  
- 
-   
+
+
+
+
   - name: Employees_trend
     title: 'Employees Trend'
     type: looker_column
@@ -274,8 +274,8 @@
     series_colors: {}
 
 
-  
-  
+
+
   - name: Voluntary_Termination
     title: '# Voluntary Termination'
     type: single_value
@@ -360,7 +360,7 @@
     totals_color: '#808080'
     series_types: {}
     single_value_title: '# Involuntary Termination'
-    
+
   - name: Employees_By_Department
     title: 'Employees By Department'
     type: looker_column
@@ -400,7 +400,7 @@
     point_style: circle
     interpolation: linear
     series_types: {}
-    
+
   - name: Employee_Trending
     title: 'Employees Trending'
     type: looker_line
@@ -447,6 +447,5 @@
     hidden_fields: [headcount.Quarter, headcount.Year]
 
 
- 
-  
- 
+
+

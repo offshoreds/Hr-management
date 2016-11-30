@@ -6,10 +6,10 @@
       height: 120
     - elements: [Top_10_Suppliers_By_Contract Leakage,Top_10_Contract_Business_Units]
       height: 330
-      
+
     - elements: [Top_Spend_Business_Units,Top_Spend_Cost_Centers,Off_Contract_Suppliers]
       height: 330
-      
+
     - elements: [Suppliers_Spend_Details]
       height: 280
 
@@ -57,9 +57,9 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    
-    
-  - name: Off_Contract_Spend_Percent 
+
+
+  - name: Off_Contract_Spend_Percent
     type: single_value
     model: Spend_Analytics
     explore: contract_s_businessunits
@@ -98,9 +98,9 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    
-    
-  - name: Payable_Leakage_Rate 
+
+
+  - name: Payable_Leakage_Rate
     type: single_value
     model: Spend_Analytics
     explore: contract_s_businessunits
@@ -179,7 +179,7 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    
+
   - name: Top_10_Suppliers_By_Contract Leakage
     type: looker_column
     model: Spend_Analytics
@@ -216,8 +216,8 @@
     point_style: none
     interpolation: linear
     series_types: {}
-  
-  
+
+
   - name: Top_10_Contract_Business_Units
     type: looker_column
     model: Spend_Analytics
@@ -257,7 +257,7 @@
     series_types:
       contract_s_businessunits.contract_percent_bm: line
 
-  
+
   - name: Top_Spend_Business_Units
     type: looker_column
     model: Spend_Analytics
@@ -411,4 +411,3 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-

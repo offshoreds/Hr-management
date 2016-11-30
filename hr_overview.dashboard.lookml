@@ -2,30 +2,30 @@
   title: HR-Overview
   layout: grid
   rows:
-   
-      
+
+
     - elements: [Workforce_Effectiveness,Employee_Headcount,Total_FTE,Continget_Employees]
       height: 210
-      
-  
+
+
     - elements: [Recruitment,New_hires,Employees_Termination,Employees_Turnover]
-      height: 210  
-      
-  
-      
+      height: 210
+
+
+
     - elements: [Employee_Expenses,Total_Expenses,Payroll_Expenses,Highest_Salary]
-      height: 210  
-      
+      height: 210
+
     - elements: [Employee_Time_period]
-      height: 330  
-        
-      
-    
+      height: 330
+
+
+
 
 #  filters:
 
   elements:
-  
+
   - name: Workforce_Effectiveness
     type: single_value
     model: Human_Resource_Management
@@ -75,8 +75,8 @@
     comparison_label: Employees Headcount Year 2015
     single_value_title: ''
     hidden_fields: [headcount.Total_Emp_2015, headcount.Total_Emp]
-    
-    
+
+
   - name: Employee_Headcount
     type: single_value
     model: Human_Resource_Management
@@ -119,7 +119,7 @@
     value_format: '#,##0'
     comparison_label: Employees Headcount Year 2015
     single_value_title: '# Employees Headcount'
-    
+
   - name: Employees_Termination
     type: single_value
     model: Human_Resource_Management
@@ -162,7 +162,7 @@
     value_format: ''
     comparison_label: Employees Termination Year 2015
     single_value_title: '# Employees Termination'
-    
+
   - name: Continget_Employees
     title: 'Continget Employees'
     type: single_value
@@ -206,8 +206,8 @@
     comparison_label: '-  2015 Contingent Employees'
     single_value_title: '# Continget Employees'
 
-    
-  
+
+
   - name: Recruitment
     type: single_value
     model: Human_Resource_Management
@@ -257,8 +257,8 @@
     comparison_label: Employees Headcount Year 2015
     single_value_title: ''
     hidden_fields: [headcount.Total_Emp_2015, headcount.Total_Emp]
-    
-    
+
+
   - name: New_hires
     type: single_value
     model: Human_Resource_Management
@@ -300,8 +300,8 @@
     series_types: {}
     single_value_title: '# New Hires'
     comparison_label: New Hires Previous Year 2015
-    
-    
+
+
   - name: Total_FTE
     type: single_value
     model: Human_Resource_Management
@@ -344,8 +344,8 @@
     value_format: '#,##0'
     comparison_label: FTE Year 2015
     single_value_title: '# Total FTE'
-    
-    
+
+
   - name: Employees_Turnover
     type: single_value
     model: Human_Resource_Management
@@ -390,7 +390,7 @@
     series_types: {}
     comparison_label: Employees Turnover Year 2015
     single_value_title: '# Employees Turnover'
-    
+
   - name: Employee_Expenses
     type: single_value
     model: Human_Resource_Management
@@ -440,7 +440,7 @@
     comparison_label: Employees Headcount Year 2015
     single_value_title: ''
     hidden_fields: [headcount.Total_Emp_2015, headcount.Total_Emp]
-    
+
   - name: Total_Expenses
     type: single_value
     model: Human_Resource_Management
@@ -488,7 +488,7 @@
     show_null_labels: false
     series_types: {}
     comparison_label: Total Expenses Year 2015
-  
+
   - name: Payroll_Expenses
     type: single_value
     model: Human_Resource_Management
@@ -538,7 +538,7 @@
     column_group_spacing_ratio: 0.5
     single_value_title: Total Payroll Expenses
     comparison_label: Payroll Expenses Year 2015
-    
+
   - name: Highest_Salary
     type: single_value
     model: Human_Resource_Management
@@ -589,8 +589,8 @@
     inner_radius: 30
     single_value_title: Highest Pay Salary
     comparison_label: Lowest Pay Salary
-    
-    
+
+
   - name: Employee_Time_period
     title: 'Employee Headcount Over Time Period'
     type: looker_area

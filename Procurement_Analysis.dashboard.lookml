@@ -3,24 +3,24 @@
   layout: grid
   rows:
     - elements: [Return_Amount,Invoice_Price]
-      height: 110     
+      height: 110
     - elements: [Top_10_Agreement_Leakage_by_Requisitioning_BU,Top_10_Non_negotiated_Purchases_By_Supplier]
       height: 330
     - elements: [Return_Trend,Receipt_Date_Exceptions_Trend]
       height: 330
-      
+
     - elements: [Top_10_Returns_By_Supplier,Top_10_Invoice_Price_Variance_by_Supplier]
       height: 330
-    
+
     - elements: [Top_10_Non_negotiated_Purchases_By_Requisitioning_BU,Top_10_Receipt_Date_Exceptions_By_Supplier]
-      height: 330 
-    
+      height: 330
+
 
 #  filters:
 
   elements:
-  
-  
+
+
   - name: Invoice_Price
     type: single_value
     model: Procurement
@@ -62,9 +62,9 @@
     series_types: {}
     y_axis_reversed: false
     single_value_title: Invoice Price
-  
-  
-  
+
+
+
   - name: Return_Amount
     type: single_value
     model: Procurement
@@ -154,8 +154,8 @@
     point_style: none
     interpolation: linear
     series_types: {}
-    
-    
+
+
   - name: Top_10_Non_negotiated_Purchases_By_Supplier
     title: 'Top 10 Non-Negotiated Purchases By Supplier'
     type: looker_line
@@ -190,8 +190,8 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-  
-  
+
+
   - name: Top_10_Non_negotiated_Purchases_By_Requisitioning_BU
     title: 'Top 10 Non Negotiated Purchases By Requisitioning BU'
     type: looker_area
@@ -257,7 +257,7 @@
     value_labels: legend
     label_type: labPer
     series_types: {}
-    
+
   - name: Top_10_Receipt_Date_Exceptions_By_Supplier
     title: 'Top 10 Receipt Date Exceptions By Supplier'
     type: looker_bar
@@ -295,8 +295,8 @@
     point_style: circle
     interpolation: linear
     series_types: {}
-    
-    
+
+
   - name: Return_Trend
     title: 'Return Trend'
     type: looker_column
@@ -340,8 +340,8 @@
     colors: 'palette: Looker Classic'
     series_colors: {}
 
-      
-  
+
+
   - name: Receipt_Date_Exceptions_Trend
     title: 'Receipt Date Exceptions Trend'
     type: looker_column
@@ -383,8 +383,8 @@
       __FILE: HR_Management/Procurement_Analysis.dashboard.lookml
       __LINE_NUM: 273
 
-      
-      
+
+
   - name: Top_10_Returns_By_Supplier
     title: 'Top 10 Returns By Supplier'
     type: looker_pie
@@ -423,7 +423,7 @@
     font_size: 12
     series_types: {}
     inner_radius: 50
-    
+
   - name: Top_10_Invoice_Price_Variance_by_Supplier
     title: 'Top 10 Invoice Price Variance By Supplier'
     type: looker_column
@@ -461,9 +461,8 @@
       variance_supplier.invoice_amount_m: line
       variance_supplier.invoice_percent_m: line
     y_axis_reversed: false
-  
-  
 
 
 
- 
+
+

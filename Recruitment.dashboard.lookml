@@ -1,23 +1,23 @@
 - dashboard: recruitment
   title: HR-Recruitment
   layout: grid
-  
+
   rows:
     - elements: [Job_requisition,Job_Openings,Offers_Accepted,Offers_Rejected,New_Hires]
-      height: 110  
-  
+      height: 110
+
     - elements: [Open_requisition_Overview,New_Hire_source]
       height: 330
     - elements: [Top_5_Vacancies,Recruitment_Stage,Vacancies_By_Departmemt]
-      height: 330 
-   
-   
+      height: 330
+
+
 
 #  filters:
 
   elements:
-  
-  
+
+
   - name: New_Hires
     type: single_value
     model: Human_Resource_Management
@@ -51,7 +51,7 @@
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
-    show_null_points: true 
+    show_null_points: true
     point_style: none
     interpolation: linear
     ordering: none
@@ -64,9 +64,9 @@
     font_size: 12
     series_types: {}
     single_value_title: New Hires
-  
-   
-  
+
+
+
   - name: Job_Openings
     type: single_value
     model: Human_Resource_Management
@@ -109,8 +109,8 @@
     totals_color: '#808080'
     series_types: {}
     single_value_title: Job Openings
-    
-    
+
+
   - name: Job_requisition
     type: single_value
     model: Human_Resource_Management
@@ -155,16 +155,16 @@
     single_value_title: Jobs Requested In Requisition
 
 
-  
 
-  
-  
-  
- 
-    
-    
 
-    
+
+
+
+
+
+
+
+
   - name: Offers_Accepted
     type: single_value
     model: Human_Resource_Management
@@ -207,8 +207,8 @@
     single_value_title: Offers Accepted
 
 
-    
-    
+
+
   - name: Offers_Rejected
     type: single_value
     model: Human_Resource_Management
@@ -250,9 +250,9 @@
     series_types: {}
     single_value_title: Offers Rejected
 
-  
 
-  
+
+
   - name: Open_requisition_Overview
     title: 'Top 5 Job Requisitions By Country'
     type: looker_pie
@@ -296,7 +296,7 @@
     font_size: 12
     series_types: {}
     inner_radius: 50
-  
+
   - name: Top_5_Vacancies
     title:  'Top 5 Vacancies'
     type: looker_bar
@@ -334,8 +334,8 @@
     label_rotation:
     series_types: {}
 
-    
-    
+
+
   - name: Recruitment_Stage
     title: 'Recruitment Stage'
     type: looker_column
@@ -380,8 +380,8 @@
     series_types: {}
     column_group_spacing_ratio: 0.5
 
- 
- 
+
+
   - name: New_Hire_source
     title: 'New Hires By Source'
     type: looker_bar
@@ -419,9 +419,9 @@
     label_type: labPer
     series_types: {}
     column_group_spacing_ratio: 0.3
-    
-    
-  - name: Vacancies_By_Departmemt 
+
+
+  - name: Vacancies_By_Departmemt
     title: 'Vacancies By Departmemt'
     type: looker_line
     model: Human_Resource_Management
@@ -461,5 +461,4 @@
     totals_color: '#808080'
     series_types: {}
 
- 
-  
+

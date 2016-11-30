@@ -4,20 +4,20 @@
   rows:
     - elements: [Total_Amount_Spend,Active_Suppliers,Contracted,Invoices]
       height: 120
-      
+
     - elements: [Spend_By_State,Business_Units]
       height: 350
-      
+
     - elements: [Top_10_Categories,Top_10_Suppliers]
       height: 350
-      
+
     - elements: [Spend_Transactions]
-      height: 380 
-  
-  
-  
+      height: 380
+
+
+
   elements:
-  
+
   - name: Total_Amount_Spend
     type: single_value
     model: Procurement
@@ -60,7 +60,7 @@
     point_style: circle
     interpolation: linear
     series_types: {}
-    
+
   - name: Active_Suppliers
     type: single_value
     model: Procurement
@@ -100,7 +100,7 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    
+
   - name: Contracted
     type: single_value
     model: Procurement
@@ -180,9 +180,9 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    
-  
-  
+
+
+
   - name: Spend_By_State
     title: 'Spend By State'
     type: looker_geo_choropleth
@@ -221,7 +221,7 @@
     totals_color: '#808080'
     series_types: {}
 
-    
+
   - name: Business_Units
     type: looker_pie
     model: Procurement
@@ -265,7 +265,7 @@
     series_types: {}
     inner_radius: 50
 
-  
+
   - name: Top_10_Categories
     type: looker_column
     model: Procurement
@@ -303,8 +303,8 @@
     interpolation: linear
     series_types: {}
     label_rotation: 310
-    
-    
+
+
   - name: Top_10_Suppliers
     type: looker_bar
     model: Procurement
@@ -341,9 +341,9 @@
     colors: ['#a9c574', '#a9c574', '#929292', '#9fdee0', '#1f3e5a', '#90c8ae', '#92818d',
       '#c5c6a6', '#82c2ca', '#cee0a0', '#928fb4', '#9fc190']
     series_colors: {}
-    
-    
-    
+
+
+
   - name: Spend_Transactions
     title: 'Spend Transactions'
     type: table
@@ -385,5 +385,3 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-
-

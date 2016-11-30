@@ -2,30 +2,30 @@
   title: HR-Employee Expenses
   layout: grid
   rows:
-  
+
     - elements: [Total_Salary,Training_cost,Cost_Recruitment]
       height:  100
 
-      
+
     - elements: [Top_Pay_Grades,Top_Cost_Centers,Top_Spenders]
       height: 300
-    
-      
+
+
     - elements: [Expenses_Report_Submission_By_Quarter,Recent_Employee]
       height: 330
-      
 
-    
+
+
     - elements: [Performance_Base]
-      height: 330  
-    
-      
-    
-      
+      height: 330
+
+
+
+
 #  filters:
 
   elements:
-  
+
   - name: Cost_Recruitment
     title: 'Cost Per Recruitment'
     type: single_value
@@ -67,9 +67,9 @@
     totals_color: '#808080'
     series_types: {}
 
-  
- 
-  
+
+
+
   - name: Total_Salary
     type: single_value
     model: Human_Resource_Management
@@ -122,11 +122,11 @@
     column_group_spacing_ratio: 0.5
     label_rotation:
     show_dropoff: false
-  
-  
-  
-  
-    
+
+
+
+
+
   - name: Training_cost
     title:  'Training Cost Per FTE'
     type: single_value
@@ -168,24 +168,24 @@
     totals_color: '#808080'
     series_types: {}
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
 
- 
-  
-    
- 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   - name: Performance_Base
     title: 'Performance Base'
     type: table
@@ -226,9 +226,9 @@
     show_silhouette: false
     totals_color: '#808080'
     series_types: {}
-    
- 
-    
+
+
+
   - name: Top_Spenders
     title: 'Top 5 Spenders'
     type: looker_bar
@@ -275,10 +275,10 @@
     series_types: {}
     inner_radius: 50
 
-    
- 
-  
-  
+
+
+
+
   - name: Recent_Employee
     title: 'Recent Employee Expenses'
     type: looker_line
@@ -321,7 +321,7 @@
     hide_row_totals: false
     table_theme: editable
     series_types: {}
-    
+
   - name: Expenses_Report_Submission_By_Quarter
     title: 'Expenses Report Submission By Quarter'
     type: looker_column
@@ -365,10 +365,10 @@
       expenses_by_day.expenses_m: area
       __FILE: HR_Management/employee_expenses.dashboard.lookml
       __LINE_NUM: 444
-    
-      
-      
-      
+
+
+
+
   - name: Top_Cost_Centers
     title: 'Top 5 Cost Centers'
     type: looker_pie
@@ -406,7 +406,7 @@
     totals_color: '#808080'
     series_types: {}
     inner_radius: 50
-  
+
   - name: Top_Pay_Grades
     title: 'Top Pay Grades'
     type: looker_bar
@@ -446,5 +446,4 @@
     series_types: {}
     inner_radius: 30
 
- 
- 
+
