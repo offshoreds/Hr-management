@@ -1,5 +1,5 @@
 view: top_spenders {
-  sql_table_name: LOOKER.TOP_SPENDERS ;;
+  sql_table_name: HRM.TOP_SPENDERS ;;
 
   dimension: category_spent {
     type: string

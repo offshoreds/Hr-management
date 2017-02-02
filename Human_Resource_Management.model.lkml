@@ -1,4 +1,4 @@
-connection: "look"
+connection: "hrm"
 
 label: "HR Management"
 

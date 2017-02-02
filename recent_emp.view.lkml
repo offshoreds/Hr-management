@@ -1,5 +1,5 @@
 view: recent_emp {
-  sql_table_name: LOOKER.RECENT_EMP ;;
+  sql_table_name: HRM.RECENT_EMP ;;
 
   dimension: Total_amount_spent {
     type: string

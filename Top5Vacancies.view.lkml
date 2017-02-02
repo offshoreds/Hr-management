@@ -1,5 +1,5 @@
 view: top5_vacancies {
-  sql_table_name: LOOKER.TOP5VACANCIES ;;
+  sql_table_name: HRM.TOP5VACANCIES ;;
 
   dimension: country_states {
     type: string

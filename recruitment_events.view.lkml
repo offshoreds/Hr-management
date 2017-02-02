@@ -1,5 +1,5 @@
 view: recruitment_events {
-  sql_table_name: LOOKER.RECRUITMENT_EVENTS ;;
+  sql_table_name: HRM.RECRUITMENT_EVENTS ;;
 
   dimension: application_hire_ratio {
     type: string

@@ -1,5 +1,5 @@
 view: new_hire_view {
-  sql_table_name: LOOKER.NEW_HIRE_VIEW ;;
+  sql_table_name: HRM.NEW_HIRE_VIEW ;;
 
   dimension: department_name {
     label: "Department"

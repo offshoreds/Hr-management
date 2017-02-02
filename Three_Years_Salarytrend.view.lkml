@@ -1,5 +1,5 @@
 view: threeyears_saltrend {
-  sql_table_name: LOOKER.THREEYEARS_SALTREND ;;
+  sql_table_name: HRM.THREEYEARS_SALTREND ;;
 
   dimension: average_annual_base_salary {
     type: string

@@ -1,5 +1,5 @@
 view: expenses_by_day {
-  sql_table_name: LOOKER.EXPENSES_BY_DAY ;;
+  sql_table_name: HRM.EXPENSES_BY_DAY ;;
 
   dimension: id {
     primary_key: yes

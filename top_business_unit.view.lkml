@@ -1,5 +1,5 @@
 view: top_business_unit {
-  sql_table_name: LOOKER.TOP_BUSINESS_UNIT ;;
+  sql_table_name: HRM.TOP_BUSINESS_UNIT ;;
 
   dimension: business_unit {
     type: string

@@ -1,5 +1,5 @@
 view: open_requisition {
-  sql_table_name: LOOKER.OPEN_REQUISITION ;;
+  sql_table_name: HRM.OPEN_REQUISITION ;;
 
   dimension: country {
     type: string

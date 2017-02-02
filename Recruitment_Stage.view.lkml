@@ -1,5 +1,5 @@
 view: recruitment_stage {
-  sql_table_name: LOOKER.RECRUITMENT_STAGE ;;
+  sql_table_name: HRM.RECRUITMENT_STAGE ;;
 
   dimension: application_start {
     type: string

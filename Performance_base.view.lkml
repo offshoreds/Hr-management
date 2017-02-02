@@ -1,5 +1,5 @@
 view: performance_base {
-  sql_table_name: LOOKER.PERFORMANCE_BASE ;;
+  sql_table_name: HRM.PERFORMANCE_BASE ;;
 
   dimension: avg_annual_base_salary {
     type: string

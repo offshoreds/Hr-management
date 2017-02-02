@@ -1,5 +1,5 @@
 view: requisition_events {
-  sql_table_name: LOOKER.REQUISITION_EVENTS ;;
+  sql_table_name: HRM.REQUISITION_EVENTS ;;
 
   dimension: Openings {
     type: string

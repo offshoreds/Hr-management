@@ -1,5 +1,5 @@
 view: headcount {
-  sql_table_name: LOOKER.HEADCOUNT ;;
+  sql_table_name: HRM.HEADCOUNT ;;
 
   dimension: Id {
     primary_key: yes

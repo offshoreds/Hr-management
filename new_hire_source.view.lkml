@@ -1,5 +1,5 @@
 view: new_hire_source {
-  sql_table_name: LOOKER.NEW_HIRE_SOURCE ;;
+  sql_table_name: HRM.NEW_HIRE_SOURCE ;;
 
   dimension: department_name {
     type: string

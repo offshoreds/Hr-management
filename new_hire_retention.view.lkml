@@ -1,5 +1,5 @@
 view: new_hire_retention {
-  sql_table_name: LOOKER.NEW_HIRE_RETENTION ;;
+  sql_table_name: HRM.NEW_HIRE_RETENTION ;;
 
   dimension: applicant_hires {
     type: string

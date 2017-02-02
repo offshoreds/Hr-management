@@ -1,5 +1,5 @@
 view: new_hire_trend {
-  sql_table_name: LOOKER.NEW_HIRE_TREND ;;
+  sql_table_name: HRM.NEW_HIRE_TREND ;;
 
   dimension: month {
     type: string

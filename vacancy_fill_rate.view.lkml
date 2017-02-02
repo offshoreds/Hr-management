@@ -1,5 +1,5 @@
 view: vacancy_fill_rate {
-  sql_table_name: LOOKER.VACANCY_FILL_RATE ;;
+  sql_table_name: HRM.VACANCY_FILL_RATE ;;
 
   dimension: id {
     primary_key: yes

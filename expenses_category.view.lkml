@@ -1,5 +1,5 @@
 view: expenses_category {
-  sql_table_name: LOOKER.EXPENSES_CATEGORY ;;
+  sql_table_name: HRM.EXPENSES_CATEGORY ;;
 
   dimension: category {
     type: string

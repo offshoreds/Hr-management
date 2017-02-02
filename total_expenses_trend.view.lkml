@@ -1,5 +1,5 @@
 view: total_expenses_trend {
-  sql_table_name: LOOKER.TOTAL_EXPENSES_TREND ;;
+  sql_table_name: HRM.TOTAL_EXPENSES_TREND ;;
 
   dimension: cumulative_expense_amount {
     type: string

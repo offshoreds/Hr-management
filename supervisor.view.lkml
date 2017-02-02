@@ -1,5 +1,5 @@
 view: supervisorreport {
-  sql_table_name: LOOKER.SUPERVISORREPORT ;;
+  sql_table_name: HRM.SUPERVISORREPORT ;;
 
   dimension: Id {
     primary_key: yes

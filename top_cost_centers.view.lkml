@@ -1,5 +1,5 @@
 view: top_cost_centers {
-  sql_table_name: LOOKER.TOP_COST_CENTERS ;;
+  sql_table_name: HRM.TOP_COST_CENTERS ;;
 
   dimension: cost_center_number {
     type: string

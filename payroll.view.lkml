@@ -1,5 +1,5 @@
 view: payroll {
-  sql_table_name: LOOKER.PAYROLL ;;
+  sql_table_name: HRM.PAYROLL ;;
 
   dimension: overtime_expense {
     type: string

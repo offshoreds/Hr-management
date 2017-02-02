@@ -1,5 +1,5 @@
 view: expenses_by_time_period {
-  sql_table_name: LOOKER.EXPENSES_BY_TIME_PERIOD ;;
+  sql_table_name: HRM.EXPENSES_BY_TIME_PERIOD ;;
 
   dimension: amount_spent {
     type: string

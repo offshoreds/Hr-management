@@ -1,5 +1,5 @@
 view: salary_compression {
-  sql_table_name: LOOKER.SALARY_COMPRESSION ;;
+  sql_table_name: HRM.SALARY_COMPRESSION ;;
 
   dimension: avg_annual_basesal {
     type: string

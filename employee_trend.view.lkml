@@ -1,5 +1,5 @@
 view: employees_trend {
-  sql_table_name: LOOKER.EMPLOYEES_TREND ;;
+  sql_table_name: HRM.EMPLOYEES_TREND ;;
 
   dimension: employees {
     type: number
