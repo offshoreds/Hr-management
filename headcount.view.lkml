@@ -96,6 +96,28 @@ view: headcount {
     }
   }
 
+  measure: Contingent_emp_nl {
+    label: " Permanent Employees."
+    type: sum
+
+    value_format: "#,##0"
+    sql: ${Emp_headcount} ;;
+
+    filters: {
+      field: Year
+      value: "2016"
+    }
+
+    filters: {
+      field: Quarter
+      value: "Q3"
+    }
+
+
+  }
+
+
+
   measure: Contingent_emp_m {
     label: "Permanent Employees"
     type: sum
@@ -173,6 +195,25 @@ view: headcount {
       label: "Workforce Effectiveness Details"
       url: "/dashboards/41"
     }
+  }
+
+  measure: Employees_Sum_nl {
+    label: "Contingent Employees."
+    type: sum
+    value_format: "#,##0"
+    sql: ${Contingent_head_count} ;;
+
+    filters: {
+      field: Year
+      value: "2016"
+    }
+
+    filters: {
+      field: Quarter
+      value: "Q3"
+    }
+
+
   }
 
   measure: Employees_m {

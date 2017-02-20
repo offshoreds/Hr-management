@@ -35,6 +35,15 @@ view: new_hire_trend {
     }
   }
 
+  measure: new_hires_ytd_m_nl {
+    label: "New Hires"
+    type: sum
+
+    sql: ${new_hires_ytd} ;;
+
+
+  }
+
   measure: new_hires_ytd_m_2015 {
     label: "New Hires 2015"
     type: sum
