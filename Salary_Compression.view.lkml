@@ -86,10 +86,10 @@ view: salary_compression {
     value_format: "$#,##0"
     sql: ${Training_Costs} ;;
 
-    link: {
-      label: "Expenses Details"
-      url: "/explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m"
-    }
+    #link: {
+    #  label: "Expenses Details"
+     # url: "/explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m"
+    #}
   }
 
   measure: Cost_Per_Recruitment {
@@ -98,10 +98,10 @@ view: salary_compression {
     value_format: "$#,##0"
     sql: ${Cost_Recruitment} ;;
 
-    link: {
-      label: "Expenses Details"
-      url: "/explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m"
-    }
+    #link: {
+    #  label: "Expenses Details"
+    #  url: "/explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m"
+   # }
   }
 
   measure: high_yearly_amount {

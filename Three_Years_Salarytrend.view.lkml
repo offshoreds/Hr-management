@@ -50,10 +50,10 @@ view: threeyears_saltrend {
     label: "Total Annual Base Salary"
     sql: ${total_base_salary} ;;
 
-    link: {
-      label: "Expenses Details"
-      url: "/explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m"
-    }
+   # link: {
+   #   label: "Expenses Details"
+     # url: "/explore/Human_Resource_Management/performance_base?fields=performance_base.performance_brand,performance_base.total_annual_base_salary_m,performance_base.avg_annual_base_salary_m,performance_base.full_base_salary_m,performance_base.max_annual_base_salary_m,performance_base.min_annual_base_salary_m"
+   # }
   }
 
   measure: count {
