@@ -369,7 +369,8 @@
     dimensions: [headcount.Department_name]
     measures: [headcount.Employees, headcount.Contingent_emp_m]
     filters:
-      headcount.Year: '2015,2016'
+      headcount.Year: '2016'
+      headcount.Quarter: 'Q3'
     sorts: [headcount.Employees desc]
     limit: '500'
     column_limit: '50'
@@ -445,7 +446,3 @@
     totals_color: '#808080'
     series_types: {}
     hidden_fields: [headcount.Quarter, headcount.Year]
-
-
-
-

@@ -1,5 +1,5 @@
 view: variance_supplier {
-  sql_table_name: LOOKER.VARIANCE_SUPPLIER ;;
+  sql_table_name: procurement.VARIANCE_SUPPLIER ;;
 
   dimension: invoice_amount {
     type: string

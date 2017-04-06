@@ -1,5 +1,5 @@
 view: receipt_date {
-  sql_table_name: LOOKER.RECEIPT_DATE ;;
+  sql_table_name: procurement.RECEIPT_DATE ;;
 
   dimension: amount {
     type: string

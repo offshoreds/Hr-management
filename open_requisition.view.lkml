@@ -21,7 +21,8 @@ view: open_requisition {
   measure: requisitions_m {
     label: "Open requisitions"
     type: sum
-    sql: ${requisitions} ;;
+    value_format: "##"
+    sql:${requisitions} ;;
   }
 
   measure: count {

@@ -1,5 +1,5 @@
 view: contract_s_businessunits {
-  sql_table_name: LOOKER.CONTRACT_S_BUSINESSUNITS ;;
+  sql_table_name: procurement.CONTRACT_S_BUSINESSUNITS ;;
 
   dimension: business_unit {
     type: string

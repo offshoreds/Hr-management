@@ -1,5 +1,5 @@
 view: date_exception {
-  sql_table_name: LOOKER.DATE_EXCEPTION ;;
+  sql_table_name: procurement.DATE_EXCEPTION ;;
 
   dimension: exception_amount {
     type: string

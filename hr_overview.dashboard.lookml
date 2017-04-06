@@ -164,7 +164,7 @@
     single_value_title: '# Employees Termination'
 
   - name: Continget_Employees
-    title: 'Continget Employees'
+    title: 'Contingent Employees'
     type: single_value
     model: Human_Resource_Management
     explore: headcount
@@ -204,7 +204,7 @@
     totals_color: '#808080'
     series_types: {}
     comparison_label: '-  2015 Contingent Employees'
-    single_value_title: '# Continget Employees'
+    single_value_title: '# Contingent Employees'
 
 
 

@@ -1,5 +1,5 @@
 view: spend_state {
-  sql_table_name: looker.SPEND_STATE ;;
+  sql_table_name: procurement.SPEND_STATE ;;
   # DIMENSIONS #
 
 

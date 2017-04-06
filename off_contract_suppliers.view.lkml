@@ -1,5 +1,5 @@
 view: off_contract_suppliers {
-  sql_table_name: LOOKER.OFF_CONTRACT_SUPPLIERS ;;
+  sql_table_name: procurement.OFF_CONTRACT_SUPPLIERS ;;
 
   dimension: quarter {
     type: string

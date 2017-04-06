@@ -1,5 +1,5 @@
 view: returns_supplier {
-  sql_table_name: LOOKER.RETURNS_SUPPLIER ;;
+  sql_table_name: procurement.RETURNS_SUPPLIER ;;
 
   dimension: returned_amount {
     type: string

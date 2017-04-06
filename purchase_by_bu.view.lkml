@@ -1,5 +1,5 @@
 view: purchase_by_bu {
-  sql_table_name: LOOKER.PURCHASE_BY_BU ;;
+  sql_table_name: procurement.PURCHASE_BY_BU ;;
 
   dimension: bu_amount {
     type: string

@@ -1,5 +1,5 @@
 view: return_trend {
-  sql_table_name: LOOKER.RETURN_TREND ;;
+  sql_table_name: procurement.RETURN_TREND ;;
 
   dimension: quarter {
     type: string

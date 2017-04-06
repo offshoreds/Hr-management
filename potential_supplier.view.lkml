@@ -1,5 +1,5 @@
 view: potential_supplier {
-  sql_table_name: LOOKER.POTENTIAL_SUPPLIER ;;
+  sql_table_name: procurement.POTENTIAL_SUPPLIER ;;
 
   dimension: avg_invoice_price {
     type: string

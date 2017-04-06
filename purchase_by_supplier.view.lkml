@@ -1,5 +1,5 @@
 view: purchase_by_supplier {
-  sql_table_name: LOOKER.PURCHASE_BY_SUPPLIER ;;
+  sql_table_name: procurement.PURCHASE_BY_SUPPLIER ;;
 
   dimension: sup_amount {
     type: string

@@ -45,6 +45,9 @@ view: supervisorreport {
     value_format: "#,##0"
     type: sum
     sql: ${Employee} ;;
+
+
+
   }
 
   measure: Supervisor_count {

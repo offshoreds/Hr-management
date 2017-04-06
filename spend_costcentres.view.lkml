@@ -1,5 +1,5 @@
 view: spend_costcentres {
-  sql_table_name: LOOKER.SPEND_COSTCENTRES ;;
+  sql_table_name: procurement.SPEND_COSTCENTRES ;;
 
   dimension: cost_centre_name {
     type: string

@@ -1,5 +1,5 @@
 view: spend_business_units {
-  sql_table_name: LOOKER.SPEND_BUSINESS_UNITS ;;
+  sql_table_name: procurement.SPEND_BUSINESS_UNITS ;;
 
   dimension: business_unit_s {
     label: "Business Unit"

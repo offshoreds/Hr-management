@@ -1,5 +1,5 @@
 view: spend_yoy_suppliers {
-  sql_table_name: LOOKER.SPEND_YOY_SUPPLIERS ;;
+  sql_table_name: procurement.SPEND_YOY_SUPPLIERS ;;
 
   dimension: quarter {
     type: string

@@ -1,5 +1,5 @@
 view: agreement_leakage {
-  sql_table_name: LOOKER.AGREEMENT_LEAKAGE ;;
+  sql_table_name: procurement.AGREEMENT_LEAKAGE ;;
 
   dimension: amount {
     type: string

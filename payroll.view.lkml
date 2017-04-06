@@ -47,7 +47,7 @@ view: payroll {
 
   measure: payroll_2015 {
     label: "Payroll Expenses 2015"
-    value_format: "$0.##,, \" M\""
+    value_format: "$0,, \" M\""
     type: sum
     sql: ${Previous_Payroll} ;;
 
@@ -59,7 +59,7 @@ view: payroll {
 
   measure: payroll {
     label: "Payroll Expenses"
-    value_format: "$0.##,, \" M\""
+    value_format: "$0,, \" M\""
     type: sum
     sql: ${Total_Payroll} ;;
 

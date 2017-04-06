@@ -1,5 +1,5 @@
 view: spend_transactions {
-  sql_table_name: LOOKER.SPEND_TRANSACTIONS ;;
+  sql_table_name: procurement.SPEND_TRANSACTIONS ;;
 
   dimension: Invoice_Date {
     type: date

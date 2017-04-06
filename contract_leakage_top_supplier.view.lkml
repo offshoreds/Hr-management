@@ -1,5 +1,5 @@
 view: contract_leakage_top_supplier {
-  sql_table_name: LOOKER.CONTRACT_LEAKAGE_TOP_SUPPLIER ;;
+  sql_table_name: procurement.CONTRACT_LEAKAGE_TOP_SUPPLIER ;;
 
   dimension: contract_amount_s {
     type: string
