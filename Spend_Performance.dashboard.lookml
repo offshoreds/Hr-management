@@ -1,4 +1,4 @@
-- dashboard: spend_performance
+#- dashboard: spend_performance
   title: Spend By Supplier
   layout: grid
   rows:

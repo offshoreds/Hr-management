@@ -1,4 +1,4 @@
-- dashboard: procurement_analysis
+#- dashboard: procurement_analysis
   title: Procurement-Overview
   layout: grid
   rows:
@@ -461,8 +461,3 @@
       variance_supplier.invoice_amount_m: line
       variance_supplier.invoice_percent_m: line
     y_axis_reversed: false
-
-
-
-
-

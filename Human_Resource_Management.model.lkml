@@ -5,13 +5,13 @@ label: "HR Management"
 # include all the views
 include: "*.view"
 
-include: "employee_expenses.dashboard"
+#include: "employee_expenses.dashboard"
 
-include: "Recruitment.dashboard"
+#include: "Recruitment.dashboard"
 
-include: "workforce_effectiveness.dashboard"
+#include: "workforce_effectiveness.dashboard"
 
-include: "hr_overview.dashboard"
+#include: "hr_overview.dashboard"
 
 explore: headcount {}
 

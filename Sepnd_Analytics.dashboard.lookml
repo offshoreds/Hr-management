@@ -1,4 +1,4 @@
-- dashboard: sepnd_analytics
+#- dashboard: sepnd_analytics
   title: Spend Analyzer
   layout: grid
   rows:
